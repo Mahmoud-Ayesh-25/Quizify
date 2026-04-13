@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Quizify_Project.UserControls.CreateQuizButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Quizify_Project.Classes"
+             mc:Ignorable="d" 
+             d:DesignHeight="45" d:DesignWidth="150"
+             x:Name="CreateQuizBTN">
+
+    <UserControl.Resources>
+        <local:clsHalfConverter x:Key="HalfConverter"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <Border Background="#FF337B38" BorderThickness="2" CornerRadius="10">
+
+            <Border.BorderBrush>
+                <SolidColorBrush x:Name="brdr" Color="#FF57C459"/>
+            </Border.BorderBrush>
+
+            <Border.RenderTransform>
+                <ScaleTransform x:Name="ScaleTransform" CenterX="{Binding ElementName=CreateQuizBTN, Path=ActualWidth, Converter={StaticResource HalfConverter}}"
+                    CenterY="{Binding ElementName=CreateQuizBTN, Path=ActualHeight, Converter={StaticResource HalfConverter}}" ScaleX="1" ScaleY="1"></ScaleTransform>
+            </Border.RenderTransform>
+
+            <TextBlock Text="Create Quiz" TextAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="20" Grid.Column="1" Padding="0 0 0 1.5"
+                       TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
+
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Duration="0:0:0.2" To="#FFD7FBD8" Storyboard.TargetName="brdr" Storyboard.TargetProperty="Color"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Duration="0:0:0.2" To="#FF57C459" Storyboard.TargetName="brdr" Storyboard.TargetProperty="Color"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+                <EventTrigger RoutedEvent="MouseDown">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.05" To="0.93" Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.05" To="0.93" Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+                <EventTrigger RoutedEvent="MouseUp">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.05" To="1" Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleX"/>
+                            <DoubleAnimation Duration="0:0:0.05" To="1" Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleY"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+
+        </Border>
+    </Grid>
+</UserControl>

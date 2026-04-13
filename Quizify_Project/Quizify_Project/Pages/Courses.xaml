@@ -1,0 +1,77 @@
+﻿<Page x:Class="Quizify_Project.Pages.Courses"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Quizify_Project.UserControls"
+      xmlns:class="clr-namespace:Quizify_Project.Classes"
+      mc:Ignorable="d" 
+      d:DesignHeight="635" d:DesignWidth="1280"
+      Title="Courses"
+      Loaded="Page_Loaded"
+      Name="CoursesPage">
+
+    <Page.Resources>
+        <class:clsHalfConverter x:Key="HalfConverter"/>
+    </Page.Resources>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="115"></ColumnDefinition>
+                <ColumnDefinition x:Name="Clmn" Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="1.2*"></ColumnDefinition>
+                <ColumnDefinition Width="1.6*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                <ColumnDefinition Width="115"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <local:BackButton x:Name="BackBTN" Grid.Column="1" Height="45" VerticalAlignment="Top" Margin="0 25 0 0" Opacity="0" IsEnabled="False"></local:BackButton>
+            
+            <TextBlock x:Name="text" Text="Courses" FontSize="20" Foreground="#ccffffff" TextAlignment="Left" Padding="0 7" Opacity="1"
+                       VerticalAlignment="Top" Margin="0 25" Grid.Column="1" Grid.ColumnSpan="2" Height="45" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis">
+                
+                <TextBlock.RenderTransform>
+                    <TranslateTransform x:Name="txt_TT" X="0" Y="0"/>
+                </TextBlock.RenderTransform>
+                
+            </TextBlock>
+            
+            <local:SearchBar x:Name="SearchBar" Grid.Column="3" Height="45" Margin="0 25" VerticalAlignment="Top"
+                             OnTextChanged="SearchBar_OnTextChanged"></local:SearchBar>
+
+            <local:CustomComboBox x:Name="SortedByCBx" Height="45" Margin="10 25" Grid.Column="4" VerticalAlignment="Top" MaxWidth="250" OnSelectedItemChanged="SortedByCBx_OnSelectedItemChanged"/>
+
+            <local:CreateQuizButton Grid.Column="5" Height="45" VerticalAlignment="Top" Margin="0 25 0 0"></local:CreateQuizButton>
+            
+        </Grid>
+
+        <ScrollViewer x:Name="SViewr" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Grid.Row="1" Opacity="1">
+
+            <ScrollViewer.RenderTransform>
+                <ScaleTransform x:Name="SVScaleTransform" ScaleX="1" ScaleY="1" CenterX="{Binding ElementName=SViewr, Path=ActualWidth,Converter={StaticResource HalfConverter}}"
+                                CenterY="{Binding ElementName=SViewr, Path=ActualHeight,Converter={StaticResource HalfConverter}}"/>
+            </ScrollViewer.RenderTransform>
+            
+            <Grid Width="{Binding ElementName=CoursesPage, Path=ActualWidth}">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                
+                <WrapPanel x:Name="wpButtonsContainer" HorizontalAlignment="Center" Grid.Column="1"/>
+            </Grid>
+
+        </ScrollViewer>
+
+    </Grid>
+</Page>

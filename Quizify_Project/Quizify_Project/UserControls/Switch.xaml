@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="Quizify_Project.UserControls.Switch"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Quizify_Project.UserControls"
+             xmlns:class="clr-namespace:Quizify_Project.Classes"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="80"
+             x:Name="SwitchBTN"
+             Loaded="SwitchBTN_Loaded">
+
+    <UserControl.Resources>
+        <class:clsHalfConverter x:Key="HalfConverter"></class:clsHalfConverter>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Border x:Name="MainBorder" CornerRadius="{Binding ElementName=SwitchBTN, Path=ActualHeight, Converter={StaticResource HalfConverter}}"
+                MouseUp="MainBorder_MouseUp">
+
+            <Border.Background>
+                <SolidColorBrush x:Name="BackgroundColor" Color="#66000000"></SolidColorBrush>
+            </Border.Background>
+            
+            <Border.Effect>
+                <DropShadowEffect x:Name="GlowEffect" BlurRadius="30" ShadowDepth="0" Color="#ff0077ff" Opacity="0"></DropShadowEffect>
+            </Border.Effect>
+
+            <Border.Resources>
+                <Storyboard x:Key="SwitchOnAnimation">
+                    <ColorAnimation Duration="0:0:0.15" To="#ff0077ff" Storyboard.TargetName="BackgroundColor" Storyboard.TargetProperty="Color"></ColorAnimation>
+                    <DoubleAnimation Duration="0:0:0.15" To="1" Storyboard.TargetName="GlowEffect" Storyboard.TargetProperty="Opacity"></DoubleAnimation>
+                    <DoubleAnimation Duration="0:0:0.15" To="0.9" Storyboard.TargetName="SwitchBall" Storyboard.TargetProperty="Opacity"></DoubleAnimation>
+                </Storyboard>
+                <Storyboard x:Key="SwitchOffAnimation">
+                    <ColorAnimation Duration="0:0:0.15" To="#66000000" Storyboard.TargetName="BackgroundColor" Storyboard.TargetProperty="Color"></ColorAnimation>
+                    <DoubleAnimation Duration="0:0:0.15" To="0" Storyboard.TargetName="GlowEffect" Storyboard.TargetProperty="Opacity"></DoubleAnimation>
+                    <DoubleAnimation Duration="0:0:0.15" To="1" Storyboard.TargetName="SwitchBall" Storyboard.TargetProperty="Opacity"></DoubleAnimation>
+                </Storyboard>
+            </Border.Resources>
+            
+            <Border x:Name="SwitchBall" Background="White" Width="{Binding ElementName=MainBorder, Path=ActualWidth, Converter={StaticResource HalfConverter}}"
+                    CornerRadius="{Binding ElementName=MainBorder, Path=CornerRadius}" Opacity="1">
+
+                <Border.RenderTransform>
+                    <TranslateTransform x:Name="SwitchTransform" X="0"></TranslateTransform>
+                </Border.RenderTransform>
+
+            </Border>
+        </Border>
+    </Grid>
+</UserControl>

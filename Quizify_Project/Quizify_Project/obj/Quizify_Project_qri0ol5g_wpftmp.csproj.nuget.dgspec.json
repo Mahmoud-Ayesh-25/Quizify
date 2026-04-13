@@ -1,0 +1,227 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\MYMY2\\source\\repos\\Quizify_Project\\Quizify_Project\\Quizify_Project.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\MYMY2\\source\\repos\\Quizify_DB_Connector\\Quizify_DB_BusinessLayer\\Quizify_DB_BusinessLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MYMY2\\source\\repos\\Quizify_DB_Connector\\Quizify_DB_BusinessLayer\\Quizify_DB_BusinessLayer.csproj",
+        "projectName": "Quizify_DB_BusinessLayer",
+        "projectPath": "C:\\Users\\MYMY2\\source\\repos\\Quizify_DB_Connector\\Quizify_DB_BusinessLayer\\Quizify_DB_BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\MYMY2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MYMY2\\source\\repos\\Quizify_DB_Connector\\Quizify_DB_BusinessLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MYMY2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "C:\\Users\\MYMY2\\source\\repos\\Quizify_DB_Connector\\Quizify_DB_DataLayer\\Quizify_DB_DataLayer.csproj": {
+                "projectPath": "C:\\Users\\MYMY2\\source\\repos\\Quizify_DB_Connector\\Quizify_DB_DataLayer\\Quizify_DB_DataLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\MYMY2\\source\\repos\\Quizify_DB_Connector\\Quizify_DB_DataLayer\\Quizify_DB_DataLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MYMY2\\source\\repos\\Quizify_DB_Connector\\Quizify_DB_DataLayer\\Quizify_DB_DataLayer.csproj",
+        "projectName": "Quizify_DB_DataLayer",
+        "projectPath": "C:\\Users\\MYMY2\\source\\repos\\Quizify_DB_Connector\\Quizify_DB_DataLayer\\Quizify_DB_DataLayer.csproj",
+        "packagesPath": "C:\\Users\\MYMY2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MYMY2\\source\\repos\\Quizify_DB_Connector\\Quizify_DB_DataLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MYMY2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "System.Diagnostics.EventLog": {
+              "target": "Package",
+              "version": "[10.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\MYMY2\\source\\repos\\Quizify_Project\\Quizify_Project\\Quizify_Project.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MYMY2\\source\\repos\\Quizify_Project\\Quizify_Project\\Quizify_Project.csproj",
+        "projectName": "Quizify_Project",
+        "projectPath": "C:\\Users\\MYMY2\\source\\repos\\Quizify_Project\\Quizify_Project\\Quizify_Project.csproj",
+        "packagesPath": "C:\\Users\\MYMY2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MYMY2\\source\\repos\\Quizify_Project\\Quizify_Project\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MYMY2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "C:\\Users\\MYMY2\\source\\repos\\Quizify_DB_Connector\\Quizify_DB_BusinessLayer\\Quizify_DB_BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\MYMY2\\source\\repos\\Quizify_DB_Connector\\Quizify_DB_BusinessLayer\\Quizify_DB_BusinessLayer.csproj"
+              },
+              "C:\\Users\\MYMY2\\source\\repos\\Quizify_DB_Connector\\Quizify_DB_DataLayer\\Quizify_DB_DataLayer.csproj": {
+                "projectPath": "C:\\Users\\MYMY2\\source\\repos\\Quizify_DB_Connector\\Quizify_DB_DataLayer\\Quizify_DB_DataLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

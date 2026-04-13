@@ -1,0 +1,241 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Background\MainBackground.png" />
+    <None Remove="Images\ButtonIcons\copy.png" />
+    <None Remove="Images\ButtonIcons\down.png" />
+    <None Remove="Images\ButtonIcons\notebook.png" />
+    <None Remove="Images\ButtonIcons\pencil.png" />
+    <None Remove="Images\ButtonIcons\question.png" />
+    <None Remove="Images\ButtonIcons\remove.png" />
+    <None Remove="Images\Buttons\close.png" />
+    <None Remove="Images\Buttons\max.png" />
+    <None Remove="Images\Buttons\min.png" />
+    <None Remove="Images\Icons\3D_Picture.png" />
+    <None Remove="Images\Icons\ButtonsIcons\Add.png" />
+    <None Remove="Images\Icons\ButtonsIcons\Search.png" />
+    <None Remove="Images\Logo\3D_Battery.png" />
+    <None Remove="Images\Logo\3D_Bulb.png" />
+    <None Remove="Images\Logo\3D_Calculator.png" />
+    <None Remove="Images\Logo\3D_Calender.png" />
+    <None Remove="Images\Logo\3D_Chart.png" />
+    <None Remove="Images\Logo\3D_Clock.png" />
+    <None Remove="Images\Logo\3D_Computer.png" />
+    <None Remove="Images\Logo\3D_File.png" />
+    <None Remove="Images\Logo\3D_Flag.png" />
+    <None Remove="Images\Logo\3D_Flash.png" />
+    <None Remove="Images\Logo\3D_Hash.png" />
+    <None Remove="Images\Logo\3D_Lab.png" />
+    <None Remove="Images\Logo\3D_Link.png" />
+    <None Remove="Images\Logo\3D_Moon.png" />
+    <None Remove="Images\Logo\3D_Notebook.png" />
+    <None Remove="Images\Logo\3D_Painting.png" />
+    <None Remove="Images\Logo\3D_Pencil.png" />
+    <None Remove="Images\Logo\3D_Potion.png" />
+    <None Remove="Images\Logo\3D_Puzzle.png" />
+    <None Remove="Images\Logo\3D_Setting.png" />
+    <None Remove="Images\Logo\3D_Star.png" />
+    <None Remove="Images\Logo\3D_Sun.png" />
+    <None Remove="Images\Logo\3D_Text.png" />
+    <None Remove="Images\Logo\3D_Trophy.png" />
+    <None Remove="Images\Logo\3D_Wifi.png" />
+    <None Remove="Images\Logo\Quizify.png" />
+    <None Remove="Images\MessageBoxIcons\error.png" />
+    <None Remove="Images\MessageBoxIcons\info.png" />
+    <None Remove="Images\MessageBoxIcons\question.png" />
+    <None Remove="Images\MessageBoxIcons\warning.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\ButtonIcons\copy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ButtonIcons\down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ButtonIcons\notebook.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ButtonIcons\pencil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ButtonIcons\remove.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Picture.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\Background\MainBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Buttons\close.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Buttons\max.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Buttons\min.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Battery.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Bulb.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Calculator.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Calender.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Chart.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Clock.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Computer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_File.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Flag.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Flash.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Hash.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Lab.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Link.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Moon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Notebook.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Painting.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Pencil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Potion.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Puzzle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Setting.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Star.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Sun.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Text.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Trophy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\3D_Wifi.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\ButtonsIcons\Add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Icons\ButtonsIcons\Search.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Logo\Quizify.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\ButtonIcons\question.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MessageBoxIcons\error.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MessageBoxIcons\info.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MessageBoxIcons\question.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\MessageBoxIcons\warning.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Quizify_DB_Connector\Quizify_DB_BusinessLayer\Quizify_DB_BusinessLayer.csproj" />
+    <ProjectReference Include="..\..\Quizify_DB_Connector\Quizify_DB_DataLayer\Quizify_DB_DataLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\Question.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Lessons.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\AddNew.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\AddNewQuestion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\Button.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\QuestionButton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\LessonButton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\CustomTextBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\AddEditLesson.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Questions\AddEditQuestion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Questions\ShowQuestion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>
