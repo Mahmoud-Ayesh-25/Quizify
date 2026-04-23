@@ -1,18 +1,8 @@
 ﻿using Quizify_Project.Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Quizify_Project.UserControls
 {
@@ -23,30 +13,63 @@ namespace Quizify_Project.UserControls
     {
         public int ID { get; }
 
-        public string Title { get; }
+        public string Title 
+        {
+            get { return TitleText.Text; }
+            set { TitleText.Text = value; } 
+        }
 
         public string LessonsCount { get; }
 
-        public string IconPath { get; }
+        public string IconPath
+        {
+            set { MainImage.Source = new BitmapImage(new Uri(value, UriKind.Absolute)); }
+        }
 
 
 
-        public Color MainBackgroundColorUp { get; }
-        public Color MainBackgroundColorDown { get; }
+        public Color MainBackgroundColorUp 
+        { 
+            get { return BackgroundUp.Color; }
+            set { BackgroundUp.Color = value; }
+        }
+        public Color MainBackgroundColorDown
+        {
+            get { return BackgroundDown.Color; }
+            set { BackgroundDown.Color = value; }
+        }
 
-        public Color BorderColorUp { get; }
-        public Color BorderColorDown { get; }
+        public Color BorderColorUp
+        {
+            get { return OutLine1.Color; }
+            set { OutLine1.Color = value; }
+        }
+        public Color BorderColorDown
+        {
+            get { return OutLine2.Color; }
+            set { OutLine2.Color = value; }
+        }
 
-        public Color LessonsCountAreaBackgroundColor { get; }
+        public Color LessonsCountAreaBackgroundColor
+        {
+            get { return ButtomAreaColor.Color; }
+            set { ButtomAreaColor.Color = value; }
+        }
 
-        public Color MouseEnterBorderColor { get; }
+        public Color MouseEnterBorderColor { get; set; }
 
         public MainButton(int id, string title, int lessonCount, string iconPath, clsColors.stColor colors)
         {
             ID = id;
-            Title = title;
             LessonsCount = $"{lessonCount} Lessons";
+
+            InitializeComponent();
+
+            Title = title;
             IconPath = iconPath;
+
+            EditBTN.Tag = id;
+            RemoveBTN.Tag = id;
 
             MainBackgroundColorUp = colors.MainBackgroundColorUp;
             MainBackgroundColorDown = colors.MainBackgroundColorDown;
@@ -59,8 +82,6 @@ namespace Quizify_Project.UserControls
             MouseEnterBorderColor = colors.MouseEnterBorderColor;
 
             this.DataContext = this;
-
-            InitializeComponent();
         }
 
         private void MainBorderStopEvent_MouseDown(object sender, MouseButtonEventArgs e)
@@ -90,6 +111,19 @@ namespace Quizify_Project.UserControls
             ClickAnim2.To = 1.03;
 
             MainBorder.MouseUp -= MainBorderStopEvent_MouseDown;
+        }
+
+        public void ChangeButtonColor(clsColors.stColor colors)
+        {
+            MainBackgroundColorUp = colors.MainBackgroundColorUp;
+            MainBackgroundColorDown = colors.MainBackgroundColorDown;
+
+            BorderColorUp = colors.BorderColorUp;
+            BorderColorDown = colors.BorderColorDown;
+
+            LessonsCountAreaBackgroundColor = colors.LessonsCountAreaBackgroundColor;
+
+            MouseEnterBorderColor = colors.MouseEnterBorderColor;
         }
     }
 }

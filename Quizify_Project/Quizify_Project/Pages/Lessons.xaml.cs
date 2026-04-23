@@ -6,7 +6,6 @@ using Quizify_Project.UserControls;
 using Quizify_Project.Windows;
 using Quizify_Project.Windows.Questions;
 using System.Data;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -51,6 +50,10 @@ namespace Quizify_Project.Pages
 
         void InBackAnimation()
         {
+            SVScaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
+            SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, null);
+            SViewr.BeginAnimation(OpacityProperty, null);
+
             DoubleAnimation scaleX = new DoubleAnimation(0.7, 1, TimeSpan.FromMilliseconds(200))
             {
                 EasingFunction = new QuarticEase()
@@ -76,6 +79,12 @@ namespace Quizify_Project.Pages
 
         void OutBackAnimation()
         {
+            txt_TT.BeginAnimation(TranslateTransform.XProperty, null);
+            BackBTN.BeginAnimation(OpacityProperty, null);
+            SVScaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
+            SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, null);
+            SViewr.BeginAnimation(OpacityProperty, null);
+
             DoubleAnimation translateX = new DoubleAnimation(0, ((Clmn.ActualWidth) * -1) - 10, TimeSpan.FromMilliseconds(200))
             {
                 EasingFunction = new QuarticEase()
@@ -121,6 +130,11 @@ namespace Quizify_Project.Pages
 
         async void OutAnimation()
         {
+            SVScaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
+            SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, null);
+            SViewr.BeginAnimation(OpacityProperty, null);
+            text.BeginAnimation(OpacityProperty, null);
+
             DoubleAnimation scaleX = new DoubleAnimation(1, 1.7, TimeSpan.FromMilliseconds(200))
             {
                 EasingFunction = new QuarticEase()
@@ -153,6 +167,10 @@ namespace Quizify_Project.Pages
 
         void InAnimation()
         {
+            SVScaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
+            SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, null);
+            SViewr.BeginAnimation(OpacityProperty, null);
+
             DoubleAnimation scaleX = new DoubleAnimation(1.7, 1, TimeSpan.FromMilliseconds(200))
             {
                 EasingFunction = new QuarticEase()
@@ -188,7 +206,6 @@ namespace Quizify_Project.Pages
 
         void AddNewButtonItem(DataRow row, int questionCount)
         {
-
             LessonButton button = new LessonButton((int)row[0], row[1].ToString(), questionCount);
 
             button.MouseUp += Item_MouseUp;
@@ -197,7 +214,7 @@ namespace Quizify_Project.Pages
 
             wpButtonsContainer.Children.Add(button);
         }
-        async void LoadButtonsItems(DataTable items)
+        async Task LoadButtonsItems(DataTable items)
         {
             wpButtonsContainer.Children.Clear();
 
@@ -257,9 +274,12 @@ namespace Quizify_Project.Pages
             }
             catch { CustomMessageBox.ShowWithBackShadow("An error occurred while fetching data from the database.", MessageBoxImage.Error, DBErrorFullMessage.FullMessage); }
 
-            PlayAnimation();
+            SViewr.Opacity = 0;
+            await LoadButtonsItems(dt);
+            await Task.Delay(50);
+            SViewr.Opacity = 1;
 
-            LoadButtonsItems(dt);
+            PlayAnimation();
         }
 
         private async void SortedByCBx_OnSelectedItemChanged(string newSelectedItem)
@@ -339,6 +359,9 @@ namespace Quizify_Project.Pages
             await Task.Delay(TimeSpan.FromMilliseconds(200));
 
             clsPagesSettings.coursesAnimationMode = clsPagesSettings.enAnimationMode.In;
+
+            clsPagesSettings.selectedCourseTitle = string.Empty;
+            clsPagesSettings.selectedCourseID = -1;
 
             this.NavigationService.Source = new Uri($"/Pages/Courses.xaml", UriKind.Relative);
         }
@@ -443,6 +466,25 @@ namespace Quizify_Project.Pages
                     return;
                 }
             }
+        }
+
+        void CreateQuiz()
+        {
+            DoubleAnimation opacity = new DoubleAnimation(1, 0, TimeSpan.FromMilliseconds(500));
+
+            this.BeginAnimation(OpacityProperty, opacity);
+
+            this.NavigationService.Source = new Uri("Pages/pgQuiz.xaml", UriKind.Relative);
+        }
+
+        private void CreateQuizButton_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            CreateQuiz createQuiz = new CreateQuiz();
+
+            clsBackShadowSettings.BackShadowOn();
+            createQuiz.OnFinished += CreateQuiz;
+            createQuiz.ShowDialog();
+            clsBackShadowSettings.BackShadowOff();
         }
     }
 }

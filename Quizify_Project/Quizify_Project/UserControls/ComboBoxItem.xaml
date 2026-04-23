@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:Quizify_Project.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="35" d:DesignWidth="150"
-             Height="35">
+             Height="35"
+             RenderOptions.BitmapScalingMode="HighQuality">
     <Grid>
         <Border CornerRadius="10" Margin="2" BorderThickness="1">
             

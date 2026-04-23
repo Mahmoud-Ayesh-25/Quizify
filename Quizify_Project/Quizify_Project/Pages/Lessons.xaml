@@ -9,7 +9,10 @@
       d:DesignHeight="635" d:DesignWidth="1280"
       Title="Lessons"
       Loaded="Page_Loaded"
-      Name="PagesPage">
+      Name="PagesPage"
+      UseLayoutRounding="True"
+      SnapsToDevicePixels="True"
+      RenderOptions.BitmapScalingMode="HighQuality">
 
     <Page.Resources>
         <class:clsHalfConverter x:Key="HalfConverter"/>
@@ -49,7 +52,7 @@
 
             <local:CustomComboBox x:Name="SortedByCBx" Height="45" Margin="10 25" Grid.Column="4" VerticalAlignment="Top" MaxWidth="250" OnSelectedItemChanged="SortedByCBx_OnSelectedItemChanged"/>
 
-            <local:CreateQuizButton Grid.Column="5" Height="45" VerticalAlignment="Top" Margin="0 25 0 0"></local:CreateQuizButton>
+            <local:CreateQuizButton Grid.Column="5" Height="45" VerticalAlignment="Top" Margin="0 25 0 0" MouseUp="CreateQuizButton_MouseUp"></local:CreateQuizButton>
             
         </Grid>
 

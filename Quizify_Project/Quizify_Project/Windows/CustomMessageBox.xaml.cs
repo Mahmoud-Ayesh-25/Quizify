@@ -1,12 +1,6 @@
-﻿using Microsoft.Win32;
-using Quizify_Project.Classes;
+﻿using Quizify_Project.Classes;
 using Quizify_Project.UserControls;
 using System.Media;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Cryptography.Xml;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;

@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="Quizify_Project.UserControls.ColorButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Quizify_Project.UserControls"
+             xmlns:class="clr-namespace:Quizify_Project.Classes"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="50"
+             x:Name="ColorBTN"
+             RenderOptions.BitmapScalingMode="HighQuality">
+
+    <UserControl.Resources>
+        <class:clsHalfConverter x:Key="HalfConverter"></class:clsHalfConverter>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Border x:Name="MainBorder" Background="Red" BorderThickness="3" 
+                CornerRadius="{Binding ElementName=ColorBTN, Path=ActualWidth, Converter={StaticResource HalfConverter}}">
+
+            <Border.BorderBrush>
+                <SolidColorBrush x:Name="BorderBrushColor" Color="Aquamarine"></SolidColorBrush>
+            </Border.BorderBrush>
+            
+            <Border.RenderTransform>
+                <ScaleTransform CenterX="{Binding ElementName=MainBorder, Path=ActualWidth, Converter={StaticResource HalfConverter}}"
+                                CenterY="{Binding ElementName=MainBorder, Path=ActualHeight, Converter={StaticResource HalfConverter}}"
+                                ScaleX="1" ScaleY="1" x:Name="BorderTranslate"></ScaleTransform>
+            </Border.RenderTransform>
+
+            <TextBlock x:Name="ButtonText" Text="" Foreground="White" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Arial" Opacity="0.9"></TextBlock>
+            
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.2" To="1.2" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.2" To="1.2" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseDown">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.1" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.1" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseUp">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.2" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.2" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+            
+        </Border>
+    </Grid>
+</UserControl>

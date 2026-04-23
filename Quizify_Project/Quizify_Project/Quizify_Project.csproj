@@ -7,6 +7,20 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x64</Platforms>
+    <ApplicationIcon>QuizifyIcon.ico</ApplicationIcon>
+    <PlatformTarget>x64</PlatformTarget>
+    <Authors>Quizify</Authors>
+    <Company>Mahmoud Ayesh - Software Developer</Company>
+    <Product>Quizify</Product>
+    <Description>Refresh your memory</Description>
+    <PackageIcon>QuizifyIcon.png</PackageIcon>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    <PackageId>Quizify</PackageId>
+    <Version>1.0.0</Version>
+    <Title>Quizify</Title>
+    <RootNamespace>Quizify</RootNamespace>
+    <AssemblyName>Quizify</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,8 +35,6 @@
     <None Remove="Images\Buttons\max.png" />
     <None Remove="Images\Buttons\min.png" />
     <None Remove="Images\Icons\3D_Picture.png" />
-    <None Remove="Images\Icons\ButtonsIcons\Add.png" />
-    <None Remove="Images\Icons\ButtonsIcons\Search.png" />
     <None Remove="Images\Logo\3D_Battery.png" />
     <None Remove="Images\Logo\3D_Bulb.png" />
     <None Remove="Images\Logo\3D_Calculator.png" />
@@ -164,19 +176,19 @@
     <Content Include="Images\Icons\3D_Wifi.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Icons\ButtonsIcons\Add.png">
+    <Content Include="Images\ButtonIcons\Add.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Icons\ButtonsIcons\Search.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\Logo\Quizify.png">
+    <Content Include="Images\ButtonIcons\Search.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Images\ButtonIcons\question.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Logo\Quizify.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\MessageBoxIcons\error.png">
@@ -191,6 +203,14 @@
     <Content Include="Images\MessageBoxIcons\warning.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="QuizifyIcon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="D:\Photoshop\QuizifyIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -225,6 +245,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserControls\CustomTextBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\AddEditCourse.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\CreateQuiz.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\AddEditLesson.xaml.cs">

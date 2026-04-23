@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\MYMY2\source\repos\Quizify_Project\Quizify_Project\obj\x64\Debug\net8.0-windows\
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\x64\Debug\net8.0-windows\
 Quizify_Project
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\MYMY2\source\repos\Quizify_Project\Quizify_Project\App.xaml
-11597318331
-371081434636
-17-31179953
-214994806010
-MainWindow.xaml;Pages\Courses.xaml;Pages\Lessons.xaml;UserControls\AddNew.xaml;UserControls\BackButton.xaml;UserControls\ComboBoxItem.xaml;UserControls\CreateQuizButton.xaml;UserControls\CustomComboBox.xaml;UserControls\LessonButton.xaml;UserControls\MainButton.xaml;UserControls\SearchBar.xaml;
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\App.xaml
+302117393356
+431051092211
+40709505886
+2141913512459
+MainWindow.xaml;Pages\Courses.xaml;Pages\FinalResult.xaml;Pages\Lessons.xaml;Pages\pgQuiz.xaml;Pages\pgReviewAnswers.xaml;Pages\Question.xaml;UserControls\AddNew.xaml;UserControls\AddNewQuestion.xaml;UserControls\BackButton.xaml;UserControls\Button.xaml;UserControls\ColorButton.xaml;UserControls\ComboBoxItem.xaml;UserControls\CreateQuizButton.xaml;UserControls\CustomComboBox.xaml;UserControls\CustomTextBox.xaml;UserControls\IconButton.xaml;UserControls\LessonButton.xaml;UserControls\MainButton.xaml;UserControls\QuestionButton.xaml;UserControls\SearchBar.xaml;UserControls\Switch.xaml;UserControls\ucAnswerReview.xaml;UserControls\ucQuestion.xaml;Windows\AddEditCourse.xaml;Windows\AddEditLesson.xaml;Windows\CreateQuiz.xaml;Windows\CustomMessageBox.xaml;Windows\Questions\AddEditQuestion.xaml;Windows\Questions\ShowQuestion.xaml;
 
 False
 

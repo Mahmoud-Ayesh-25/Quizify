@@ -15,7 +15,8 @@
         Background="Transparent"
         x:Name="MyWindow"
         MinWidth="895" MinHeight="540"
-        StateChanged="MyWindow_StateChanged">
+        StateChanged="MyWindow_StateChanged"
+    RenderOptions.BitmapScalingMode="HighQuality">
 
 
     <Window.RenderTransform>
@@ -70,7 +71,7 @@
             <Border Background="Transparent" Height="5" x:Name="BottomResize" VerticalAlignment="Bottom" Panel.ZIndex="5" Grid.Row="2" Cursor="SizeNS"
                     MouseDown="RightResize_MouseDown" MouseMove="RightResize_MouseMove" MouseUp="RightResize_MouseUp"/>
 
-            <TextBlock Text="v1.0       Mahmoud Ayesh - Sofrware Developer" FontSize="11" Margin="10 0" Foreground="#aaffffff" FontFamily="Microsoft YaHei" Grid.Row="2"/>
+            <TextBlock Text="v1.0       Mahmoud Ayesh - Software Developer" FontSize="11" Margin="10 0" Foreground="#aaffffff" FontFamily="Microsoft YaHei" Grid.Row="2" RenderOptions.BitmapScalingMode="HighQuality"/>
 
             <Border Grid.Row="0" Background="#FF111731" CornerRadius="10 10 0 0" BorderThickness="1" BorderBrush="#FF343D66">
 

@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:Quizify_Project.UserControls"
              mc:Ignorable="d" 
              Width="315" Height="165"
-             Margin="15.7">
+             Margin="15.7"
+             RenderOptions.BitmapScalingMode="HighQuality">
 
     <UserControl.RenderTransform>
         <ScaleTransform x:Name="BTNScale" CenterX="157.5" CenterY="82.5" ScaleX="1" ScaleY="1"></ScaleTransform>
@@ -50,7 +51,7 @@
                 <TextBlock Text="Add New" Foreground="#eeffffff" FontSize="14"
                            HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" Grid.Row="1" FontFamily="Arial"/>
 
-                <Image Source="/Images/Icons/ButtonsIcons/Add.png" Grid.Row="0" Margin="20" RenderOptions.BitmapScalingMode="HighQuality"/>
+                <Image Source="/Images/ButtonIcons/Add.png" Grid.Row="0" Margin="20" RenderOptions.BitmapScalingMode="HighQuality"/>
 
             </Grid>
 

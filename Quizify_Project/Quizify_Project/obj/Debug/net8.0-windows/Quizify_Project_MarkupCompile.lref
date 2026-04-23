@@ -1,4 +1,4 @@
-﻿C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+﻿
 FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\App.xaml;;
 FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\MainWindow.xaml;;
 FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\Pages\Courses.xaml;;
@@ -8,6 +8,7 @@ FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\UserControls\AddNew.xam
 FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\UserControls\AddNewQuestion.xaml;;
 FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\UserControls\BackButton.xaml;;
 FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\UserControls\Button.xaml;;
+FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\UserControls\ColorButton.xaml;;
 FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\UserControls\ComboBoxItem.xaml;;
 FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\UserControls\CreateQuizButton.xaml;;
 FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\UserControls\CustomComboBox.xaml;;
@@ -21,4 +22,12 @@ FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\Windows\AddEditLesson.x
 FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\Windows\CustomMessageBox.xaml;;
 FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\Windows\Questions\AddEditQuestion.xaml;;
 FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\Windows\Questions\ShowQuestion.xaml;;
+FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\UserControls\IconButton.xaml;;
+FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\Windows\CreateQuiz.xaml;;
+FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\Windows\AddEditCourse.xaml;;
+FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\UserControls\ucQuestion.xaml;;
+FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\Pages\pgQuiz.xaml;;
+FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\Pages\pgReviewAnswers.xaml;;
+FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\UserControls\ucAnswerReview.xaml;;
+FC:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\Pages\FinalResult.xaml;;
 

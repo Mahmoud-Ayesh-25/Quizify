@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Quizify_Project.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="40" d:DesignWidth="400">
+             d:DesignHeight="40" d:DesignWidth="400"
+             RenderOptions.BitmapScalingMode="HighQuality">
 
     <Grid>
         <Border Background="#08ffffff" BorderThickness="1.5" CornerRadius="10">

@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/buttonicons/copy.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/buttonicons/down.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/buttonicons/notebook.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/buttonicons/pencil.png")]
@@ -42,8 +43,13 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/icons/3d_text.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/icons/3d_trophy.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/icons/3d_wifi.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/icons/buttonsicons/add.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/icons/buttonsicons/search.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/buttonicons/add.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/buttonicons/search.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/logo/quizify.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/buttonicons/question.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/messageboxicons/error.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/messageboxicons/info.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/messageboxicons/question.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/messageboxicons/warning.png")]
 
 

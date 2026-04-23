@@ -1,5 +1,4 @@
-﻿using Quizify_Project.Pages;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Quizify_Project.UserControls
@@ -35,7 +34,7 @@ namespace Quizify_Project.UserControls
                 if (!value.EndsWith("?"))
                     value = value + "?";
 
-                AnswerText.Text = $"Q: {value}";
+                AnswerText.Text = $"A: {value}";
             }
         }
 

@@ -1,0 +1,91 @@
+﻿<Page x:Class="Quizify_Project.Pages.pgQuiz"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Quizify_Project.Pages"
+      xmlns:userControls="clr-namespace:Quizify_Project.UserControls"
+      mc:Ignorable="d" 
+      d:DesignHeight="635" d:DesignWidth="1280"
+      Title="pgQuiz"
+      Loaded="Page_Loaded"
+      Opacity="0"
+      x:Name="MypgQuiz"
+      RenderOptions.BitmapScalingMode="HighQuality">
+
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Duration="0:0:1" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="MypgQuiz"></DoubleAnimation>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+
+    <Grid>
+
+        <StackPanel x:Name="ProgressStackPanal" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
+            <ProgressBar x:Name="Progress" Background="#33ffffff" BorderBrush="White" Value="50" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="5" ></ProgressBar>
+            <TextBlock Text="Preparing questions..." VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" RenderOptions.BitmapScalingMode="HighQuality"></TextBlock>
+        </StackPanel>
+
+        <Grid x:Name="ContentGrid">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition x:Name="PathColumn"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="TimeText" Text="∞" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" Foreground="White" FontFamily="Agency FB"
+                           RenderOptions.BitmapScalingMode="HighQuality"></TextBlock>
+
+                <TextBlock Text="C#/Why C#" x:Name="PathText" Grid.Column="1" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="17"
+                    Foreground="White" FontFamily="Arial" TextTrimming="CharacterEllipsis"></TextBlock>
+
+            </Grid>
+
+
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Border x:Name="brdr" Grid.Column="1"></Border>
+
+                    <StackPanel Panel.ZIndex="1" x:Name="ElementsContainer" HorizontalAlignment="Center" Width="{Binding ElementName=brdr, Path=ActualWidth}" Grid.Column="1"></StackPanel>
+
+                </Grid>
+
+            </ScrollViewer>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition x:Name="SubmitAnswersColumn"></ColumnDefinition>
+                    <ColumnDefinition x:Name="QuitQuizColumn"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel x:Name="SubmitPanal" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center"></StackPanel>
+                <StackPanel x:Name="QuitPanal" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right"></StackPanel>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>

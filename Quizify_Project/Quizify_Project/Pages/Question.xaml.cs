@@ -1,12 +1,9 @@
-﻿using Microsoft.Data.SqlClient;
-using Quizify_DB_BusinessLayer;
-using Quizify_DB_DataLayer;
+﻿using Quizify_DB_BusinessLayer;
 using Quizify_Project.Classes;
 using Quizify_Project.UserControls;
 using Quizify_Project.Windows.Questions;
 using Quizify_Project.Windows;
 using System.Data;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -38,6 +35,10 @@ namespace Quizify_Project.Pages
 
         void InBackAnimation()
         {
+            SVScaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
+            SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, null);
+            SViewr.BeginAnimation(OpacityProperty, null);
+
             DoubleAnimation scaleX = new DoubleAnimation(0.7, 1, TimeSpan.FromMilliseconds(200))
             {
                 EasingFunction = new QuarticEase()
@@ -63,6 +64,10 @@ namespace Quizify_Project.Pages
 
         void OutBackAnimation()
         {
+            SVScaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
+            SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, null);
+            SViewr.BeginAnimation(OpacityProperty, null);
+
             DoubleAnimation scaleX = new DoubleAnimation(1, 0.7, TimeSpan.FromMilliseconds(200))
             {
                 EasingFunction = new QuarticEase()
@@ -70,6 +75,7 @@ namespace Quizify_Project.Pages
                     EasingMode = EasingMode.EaseOut,
                 }
             };
+
             DoubleAnimation scaleY = new DoubleAnimation(1, 0.7, TimeSpan.FromMilliseconds(200))
             {
                 EasingFunction = new QuarticEase()
@@ -106,7 +112,7 @@ namespace Quizify_Project.Pages
 
             spButtonsContainer.Children.Add(button);
         }
-        async void LoadButtonsItems(DataTable items)
+        void LoadButtonsItems(DataTable items)
         {
             spButtonsContainer.Children.Clear();
 
@@ -133,6 +139,8 @@ namespace Quizify_Project.Pages
         }
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            SViewr.Opacity = 0;
+
             text.Text = $"{clsPagesSettings.selectedCourseTitle}/{clsPagesSettings.selectedLessonTitle}"
             ;
 
@@ -156,9 +164,11 @@ namespace Quizify_Project.Pages
             }
             catch { CustomMessageBox.ShowWithBackShadow("An error occurred while fetching data from the database.", MessageBoxImage.Error, DBErrorFullMessage.FullMessage); }
 
-            InBackAnimation();
-
             LoadButtonsItems(dt);
+            await Task.Delay(50);
+            SViewr.Opacity = 1;
+
+            InBackAnimation();
         }
 
         private async void SortedByCBx_OnSelectedItemChanged(string newSelectedItem)
@@ -235,6 +245,9 @@ namespace Quizify_Project.Pages
             await Task.Delay(TimeSpan.FromMilliseconds(200));
 
             clsPagesSettings.lessonsAnimationMode = clsPagesSettings.enAnimationMode.In;
+
+            clsPagesSettings.selectedLessonTitle = string.Empty;
+            clsPagesSettings.selectedlessonID = -1;
 
             this.NavigationService.Source = new Uri($"/Pages/Lessons.xaml", UriKind.Relative);
         }
@@ -340,5 +353,24 @@ namespace Quizify_Project.Pages
                 }
             }
         }
+        void CreateQuiz()
+        {
+            DoubleAnimation opacity = new DoubleAnimation(1, 0, TimeSpan.FromMilliseconds(500));
+
+            this.BeginAnimation(OpacityProperty, opacity);
+
+            this.NavigationService.Source = new Uri("Pages/pgQuiz.xaml", UriKind.Relative);
+        }
+
+        private void CreateQuizButton_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            CreateQuiz createQuiz = new CreateQuiz();
+
+            clsBackShadowSettings.BackShadowOn();
+            createQuiz.OnFinished += CreateQuiz;
+            createQuiz.ShowDialog();
+            clsBackShadowSettings.BackShadowOff();
+        }
+
     }
 }

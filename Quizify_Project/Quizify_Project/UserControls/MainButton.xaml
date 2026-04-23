@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:Quizify_Project.UserControls"
              mc:Ignorable="d" 
              Width="315" Height="165"
-             Margin="15.7">
+             Margin="15.7"
+             RenderOptions.BitmapScalingMode="HighQuality">
 
     <UserControl.RenderTransform>
         <ScaleTransform x:Name="BTNScale" CenterX="157.5" CenterY="82.5" ScaleX="1" ScaleY="1"></ScaleTransform>
@@ -21,8 +22,8 @@
             
             <Border.Background>
                 <LinearGradientBrush StartPoint="0.5 0" EndPoint="0.5 1">
-                    <GradientStop Color="{Binding MainBackgroundColorUp}" Offset="0.1"></GradientStop>
-                    <GradientStop Color="{Binding MainBackgroundColorDown}" Offset="1"></GradientStop>
+                    <GradientStop x:Name="BackgroundUp" Color="{Binding MainBackgroundColorUp}" Offset="0.1"></GradientStop>
+                    <GradientStop x:Name="BackgroundDown" Color="{Binding MainBackgroundColorDown}" Offset="1"></GradientStop>
                 </LinearGradientBrush>
             </Border.Background>
 
@@ -46,11 +47,11 @@
                 <Border CornerRadius="0 0 12 12"
                         Grid.Row="1" Grid.ColumnSpan="2">
                     <Border.Background>
-                        <SolidColorBrush Color="{Binding LessonsCountAreaBackgroundColor}"/>
+                        <SolidColorBrush x:Name="ButtomAreaColor" Color="{Binding LessonsCountAreaBackgroundColor}"/>
                     </Border.Background>
                 </Border>
 
-                <TextBlock Text="{Binding Title}" Foreground="White" FontSize="20" FontWeight="Bold" TextWrapping="Wrap"
+                <TextBlock x:Name="TitleText" Text="{Binding Title}" Foreground="White" FontSize="20" FontWeight="Bold" TextWrapping="Wrap"
                            HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10">
                     <TextBlock.Effect>
                         <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="5" Opacity="0.5"/>
@@ -70,7 +71,7 @@
 
                     <StackPanel x:Name="OptionsButtons" Grid.Row="0" Opacity="0" Orientation="Horizontal" HorizontalAlignment="Right">
 
-                        <Border x:Name="EditBTN" Opacity="0.7" Height="20" Margin="7.5 7.5 7.5 0" ToolTip="Edit" MouseDown="EditBTN_MouseDown" MouseUp="EditBTN_MouseUp">
+                        <Border x:Name="EditBTN" Opacity="0.7" Height="20" Margin="7.5 7.5 7.5 0" ToolTip="Edit" MouseDown="EditBTN_MouseDown" MouseUp="EditBTN_MouseUp" Tag="">
                             <Image Source="/Images/ButtonIcons/pencil.png" RenderOptions.BitmapScalingMode="HighQuality"/>
 
                             <Border.RenderTransform>
@@ -115,7 +116,7 @@
                             
                         </Border>
 
-                        <Border x:Name="RemoveBTN" Opacity="0.7" Height="20" Margin="7.5 7.5 7.5 0" ToolTip="Remove" MouseDown="EditBTN_MouseDown" MouseUp="RemoveBTN_MouseUp">
+                        <Border x:Name="RemoveBTN" Opacity="0.7" Height="20" Margin="7.5 7.5 7.5 0" ToolTip="Remove" MouseDown="EditBTN_MouseDown" MouseUp="RemoveBTN_MouseUp" Tag="">
                             <Image Source="/Images/ButtonIcons/remove.png" RenderOptions.BitmapScalingMode="HighQuality"/>
 
                             <Border.RenderTransform>
@@ -163,7 +164,7 @@
 
                     </StackPanel>
 
-                    <Image Source="{Binding IconPath}" Grid.Row="1" RenderOptions.BitmapScalingMode="HighQuality"></Image>
+                    <Image x:Name="MainImage" Source="{Binding IconPath}" Grid.Row="1" RenderOptions.BitmapScalingMode="HighQuality"></Image>
 
                 </Grid>
 

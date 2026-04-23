@@ -1,7 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Collections.Generic;
 using System.Data;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
 namespace Quizify_DB_BusinessLayer

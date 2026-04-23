@@ -1,18 +1,12 @@
-﻿using Quizify_Project.Classes;
-using Quizify_Project.UserControls;
+﻿using Quizify_DB_DataLayer;
+using Quizify_Project.Classes;
 using Quizify_Project.Windows;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Quizify_Project
 {
@@ -21,8 +15,42 @@ namespace Quizify_Project
     /// </summary>
     public partial class MainWindow : Window
     {
+        void _MoveTheDB()
+        {
+            string mdf_path = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Quizify", "Quizify_DB.mdf");
+            string log_path = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Quizify", "Quizify_DB_log.ldf");
+
+            if (File.Exists(mdf_path) && File.Exists(log_path)) return;
+
+            if (File.Exists(@"DB\Quizify_DB.mdf") && File.Exists(@"DB\Quizify_DB_log.ldf"))
+            {
+                string dir = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Quizify");
+
+                try
+                {
+                    Directory.CreateDirectory(dir);
+                    File.Move(@"DB\Quizify_DB.mdf", mdf_path);
+                    File.Move(@"DB\Quizify_DB_log.ldf", log_path);
+                    Directory.Delete("DB");
+                }
+                catch (Exception ex)
+                {
+                    clsSettings.CreateErrorEventLog(ex.ToString());
+                    CustomMessageBox.ShowWithBackShadow($"Failed to transfer the database.", MessageBoxImage.Error, @"This means that the connection with the database will not be established correctly. The database files are located inside the DB folder within the program folder. If they exist, move them manually to the following path: C:\Users\YourUserName\AppData\Local\Quizify");
+                    this.Close();
+                }
+            }
+            else
+            {
+                CustomMessageBox.ShowWithBackShadow($"The database files were not found.", MessageBoxImage.Error, @"Please make sure the database files exist in \Program File\DB\.");
+                this.Close();
+            }
+        }
+
         public MainWindow()
         {
+            _MoveTheDB();
+
             InitializeComponent();
 
             isMin = false;

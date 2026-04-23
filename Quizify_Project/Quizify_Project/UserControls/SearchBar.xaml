@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Quizify_Project.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="40" d:DesignWidth="400">
+             d:DesignHeight="40" d:DesignWidth="400"
+             RenderOptions.BitmapScalingMode="HighQuality">
 
     <Grid>
         <Border Background="#08ffffff" BorderThickness="1.5" CornerRadius="10">
@@ -39,7 +40,7 @@
                 </TextBox>
 
                 <StackPanel Panel.ZIndex="0" x:Name="ImageAndSearchPanal" VerticalAlignment="Center" Orientation="Horizontal" Opacity="1">
-                    <Image Source="/Images/Icons/ButtonsIcons/Search.png" Opacity="0.8" Margin="8" RenderOptions.BitmapScalingMode="HighQuality"></Image>
+                    <Image Source="/Images/ButtonIcons/Search.png" Opacity="0.8" Margin="8" RenderOptions.BitmapScalingMode="HighQuality"></Image>
                     <TextBlock Text="Search..." VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#55ffffff" FontSize="15"/>
                 </StackPanel>
             </Grid>

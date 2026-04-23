@@ -1,20 +1,9 @@
-﻿using Microsoft.Win32;
-using Quizify_DB_BusinessLayer;
+﻿using Quizify_DB_BusinessLayer;
 using Quizify_Project.Classes;
-using Quizify_Project.UserControls;
-using System.Media;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Cryptography.Xml;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
 
 namespace Quizify_Project.Windows.Questions
 {

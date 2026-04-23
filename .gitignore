@@ -1,0 +1,74 @@
+## Build Folders
+!bin/
+obj/
+[Bb]uild/
+[Bb]uilds/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Oo]ut/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Visual Studio specific
+.vs/
+.vscode/
+*.ncb
+*.opendb
+*.iobj
+*.ipdb
+
+## NuGet
+packages/
+*.nupkg
+*.snupkg
+.nuget/
+project.lock.json
+project.fragment.lock.json
+
+## Logs
+*.log
+
+## Database files
+*.mdf
+*.ldf
+*.dbmdl
+
+## Backup and misc
+*.bak
+*.tmp
+*.swp
+*.DS_Store
+Thumbs.db
+
+## Publish outputs
+*.publishsettings
+PublishProfiles/
+*.deployment
+*.deploy.cmd
+*.deploy-readme.txt
+
+## Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## Rider
+.idea/
+
+## Test results
+TestResult*/
+*.trx
+*.coverage
+*.coveragexml
+
+## Others
+*.cache
+*.pidb
+*.svclog
+*.scc

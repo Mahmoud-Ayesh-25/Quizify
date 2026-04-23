@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="Quizify_Project.UserControls.IconButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Quizify_Project.UserControls"
+             xmlns:class="clr-namespace:Quizify_Project.Classes"
+             mc:Ignorable="d" 
+             d:DesignHeight="60" d:DesignWidth="60"
+             RenderOptions.BitmapScalingMode="HighQuality">
+
+    <UserControl.Resources>
+        <class:clsHalfConverter x:Key="HalfConverter"></class:clsHalfConverter>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Border x:Name="MainBorder" Background="#55000000" CornerRadius="10" BorderThickness="2">
+
+            <Border.BorderBrush>
+                <SolidColorBrush x:Name="BorderColor" Color="#55000000"></SolidColorBrush>
+            </Border.BorderBrush>
+
+            <Border.RenderTransform>
+                <ScaleTransform CenterX="{Binding ElementName=MainBorder, Path=ActualWidth, Converter={StaticResource HalfConverter}}"
+                                CenterY="{Binding ElementName=MainBorder, Path=ActualHeight, Converter={StaticResource HalfConverter}}"
+                                ScaleX="1" ScaleY="1" x:Name="BorderScale"></ScaleTransform>
+            </Border.RenderTransform>
+            
+            <Image x:Name="MainImage" Source="/Images/Icons/3D_Battery.png" RenderOptions.BitmapScalingMode="HighQuality" Margin="5"></Image>
+
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.2" To="1.2" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderScale"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.2" To="1.2" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderScale"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderScale"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderScale"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseDown">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.1" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderScale"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.1" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderScale"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseUp">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.2" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderScale"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.2" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderScale"></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+        </Border>
+    </Grid>
+</UserControl>

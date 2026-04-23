@@ -15,7 +15,8 @@
         MaxHeight="540" MaxWidth="750"
         MinHeight="340" MinWidth="750"
         Loaded="Window_Loaded"
-        x:Name="QuestionWindow">
+        x:Name="QuestionWindow"
+        RenderOptions.BitmapScalingMode="HighQuality">
     
     <Window.Resources>
         <class:clsHalfConverter x:Key="HalfConverter"></class:clsHalfConverter>

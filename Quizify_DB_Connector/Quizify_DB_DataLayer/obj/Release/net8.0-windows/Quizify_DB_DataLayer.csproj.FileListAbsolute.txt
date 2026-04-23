@@ -10,3 +10,16 @@ C:\Users\MYMY2\source\repos\Quizify_DB_Connector\Quizify_DB_DataLayer\obj\Releas
 C:\Users\MYMY2\source\repos\Quizify_DB_Connector\Quizify_DB_DataLayer\obj\Release\net8.0-windows\refint\Quizify_DB_DataLayer.dll
 C:\Users\MYMY2\source\repos\Quizify_DB_Connector\Quizify_DB_DataLayer\obj\Release\net8.0-windows\Quizify_DB_DataLayer.pdb
 C:\Users\MYMY2\source\repos\Quizify_DB_Connector\Quizify_DB_DataLayer\obj\Release\net8.0-windows\ref\Quizify_DB_DataLayer.dll
+C:\GitHup\repos\Quizify\Quizify_DB_Connector\Quizify_DB_DataLayer\bin\Release\net8.0-windows\Quizify_DB_DataLayer.deps.json
+C:\GitHup\repos\Quizify\Quizify_DB_Connector\Quizify_DB_DataLayer\bin\Release\net8.0-windows\Quizify_DB_DataLayer.dll
+C:\GitHup\repos\Quizify\Quizify_DB_Connector\Quizify_DB_DataLayer\bin\Release\net8.0-windows\Quizify_DB_DataLayer.pdb
+C:\GitHup\repos\Quizify\Quizify_DB_Connector\Quizify_DB_DataLayer\obj\Release\net8.0-windows\Quizify_DB_DataLayer.csproj.AssemblyReference.cache
+C:\GitHup\repos\Quizify\Quizify_DB_Connector\Quizify_DB_DataLayer\obj\Release\net8.0-windows\Quizify_DB_DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitHup\repos\Quizify\Quizify_DB_Connector\Quizify_DB_DataLayer\obj\Release\net8.0-windows\Quizify_DB_DataLayer.AssemblyInfoInputs.cache
+C:\GitHup\repos\Quizify\Quizify_DB_Connector\Quizify_DB_DataLayer\obj\Release\net8.0-windows\Quizify_DB_DataLayer.AssemblyInfo.cs
+C:\GitHup\repos\Quizify\Quizify_DB_Connector\Quizify_DB_DataLayer\obj\Release\net8.0-windows\Quizify_DB_DataLayer.csproj.CoreCompileInputs.cache
+C:\GitHup\repos\Quizify\Quizify_DB_Connector\Quizify_DB_DataLayer\obj\Release\net8.0-windows\Quizify_DB_DataLayer.sourcelink.json
+C:\GitHup\repos\Quizify\Quizify_DB_Connector\Quizify_DB_DataLayer\obj\Release\net8.0-windows\Quizify_DB_DataLayer.dll
+C:\GitHup\repos\Quizify\Quizify_DB_Connector\Quizify_DB_DataLayer\obj\Release\net8.0-windows\refint\Quizify_DB_DataLayer.dll
+C:\GitHup\repos\Quizify\Quizify_DB_Connector\Quizify_DB_DataLayer\obj\Release\net8.0-windows\Quizify_DB_DataLayer.pdb
+C:\GitHup\repos\Quizify\Quizify_DB_Connector\Quizify_DB_DataLayer\obj\Release\net8.0-windows\ref\Quizify_DB_DataLayer.dll

@@ -8,7 +8,8 @@
              mc:Ignorable="d" 
              Height="120"
              Margin="15.7"
-             x:Name="QButton">
+             x:Name="QButton"
+             RenderOptions.BitmapScalingMode="HighQuality">
 
     <UserControl.Resources>
         <class:clsHalfConverter x:Key="HalfConverter"></class:clsHalfConverter>
@@ -49,7 +50,7 @@
                     <RowDefinition Height="0.5*"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <Image Panel.ZIndex="1" Source="/Images/Icons/ButtonsIcons/Add.png" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"
+                <Image Panel.ZIndex="1" Source="/Images/ButtonIcons/Add.png" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"
                        RenderOptions.BitmapScalingMode="HighQuality" Margin="0 0 10 0" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
 
                 <Border CornerRadius="0 0 12 12"
