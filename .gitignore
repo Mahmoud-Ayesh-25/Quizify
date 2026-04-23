@@ -34,11 +34,6 @@ project.fragment.lock.json
 ## Logs
 *.log
 
-## Database files
-*.mdf
-*.ldf
-*.dbmdl
-
 ## Backup and misc
 *.bak
 *.tmp
