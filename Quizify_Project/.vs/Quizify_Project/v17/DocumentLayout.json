@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\GitHup\\repos\\Quizify\\Quizify_Project\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C4D551D9-80A3-4A26-BA69-33C0ED21E1BE}|Quizify_Project\\Quizify_Project.csproj|c:\\githup\\repos\\quizify\\quizify_project\\quizify_project\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C4D551D9-80A3-4A26-BA69-33C0ED21E1BE}|Quizify_Project\\Quizify_Project.csproj|solutionrelative:quizify_project\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 178,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,6 +27,18 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\GitHup\\repos\\Quizify\\Quizify_Project\\Quizify_Project\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Quizify_Project\\MainWindow.xaml",
+              "ToolTip": "C:\\GitHup\\repos\\Quizify\\Quizify_Project\\Quizify_Project\\MainWindow.xaml",
+              "RelativeToolTip": "Quizify_Project\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-05-11T21:14:25.723Z",
+              "EditorCaption": ""
             }
           ]
         }

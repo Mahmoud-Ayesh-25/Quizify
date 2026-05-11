@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Quizify_DB_BusinessLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5148fac9ecf6dcf42c17e2904fdc04a2eb79720")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0ab3a0345fab058ced6ce9bc5a60492bebaef54")]
 [assembly: System.Reflection.AssemblyProductAttribute("Quizify_DB_BusinessLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Quizify_DB_BusinessLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
