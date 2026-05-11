@@ -7,7 +7,7 @@
         xmlns:class="clr-namespace:Quizify_Project.Classes"
         xmlns:userControls="clr-namespace:Quizify_Project.UserControls"
         mc:Ignorable="d"
-        Title="Question Details" Height="340" Width="750"
+        Title="Question Details" Height="540" Width="750"
         AllowsTransparency="True"
         Background="Transparent"
         WindowStyle="None"
@@ -23,7 +23,7 @@
     </Window.Resources>
 
     <Window.RenderTransform>
-        <ScaleTransform x:Name="WindowScale" CenterX="444.5" CenterY="{Binding ElementName=QuestionWindow, Path=ActualHeight, Converter={StaticResource HalfConverter}}" ScaleX="1" ScaleY="1"/>
+            <ScaleTransform x:Name="WindowScale" CenterX="444.5" CenterY="{Binding ElementName=QuestionWindow, Path=ActualHeight, Converter={StaticResource HalfConverter}}" ScaleX="1" ScaleY="1"/>
     </Window.RenderTransform>
 
     <Window.Triggers>
@@ -162,26 +162,16 @@
                         
                         <Border x:Name="CloseBTN" CornerRadius="5" Grid.Column="1" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" MouseUp="CloseBTN_MouseUp">
 
-                            <Border.Background>
-                                <SolidColorBrush x:Name="CloseBTNColor" Color="Transparent"/>
-                            </Border.Background>
-
-                            <Border.Triggers>
-                                <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation Duration="0:0:0.15" To="#33ff0000" Storyboard.TargetName="CloseBTNColor" Storyboard.TargetProperty="Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation Duration="0:0:0.15" To="Transparent" Storyboard.TargetName="CloseBTNColor" Storyboard.TargetProperty="Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </Border.Triggers>
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Background" Value="Transparent"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#33ff0000"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
                             <Image Source="/Images/Buttons/close.png" Width="20" Height="20" RenderOptions.BitmapScalingMode="HighQuality"/>
 
                         </Border>

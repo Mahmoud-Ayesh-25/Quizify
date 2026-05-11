@@ -37,8 +37,8 @@
             </Grid.ColumnDefinitions>
 
             <local:BackButton IsEnabled="True" x:Name="BackBTN" Grid.Column="1" Height="45" VerticalAlignment="Top" Margin="0 25 0 0" Opacity="1" MouseUp="BackBTN_MouseUp"></local:BackButton>
-            
-            <TextBlock x:Name="text" Text="Courses" FontSize="20" Foreground="#ccffffff" TextAlignment="Left" Padding="0 7" Opacity="1"
+
+            <TextBlock x:Name="text" Text="Courses" FontSize="20" Foreground="#ccffffff" TextAlignment="Left" Padding="0 7" Opacity="1" ToolTip="{Binding ElementName=text, Path=Text}"
                        VerticalAlignment="Top" Margin="10 25" Grid.Column="2" Height="45" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis">
                 
                 <TextBlock.RenderTransform>
@@ -62,8 +62,8 @@
                 <ScaleTransform x:Name="SVScaleTransform" ScaleX="1" ScaleY="1" CenterX="{Binding ElementName=SViewr, Path=ActualWidth,Converter={StaticResource HalfConverter}}"
                                 CenterY="{Binding ElementName=SViewr, Path=ActualHeight,Converter={StaticResource HalfConverter}}"/>
             </ScrollViewer.RenderTransform>
-            
-            <Grid Width="{Binding ElementName=CoursesPage, Path=ActualWidth}">
+
+            <Grid Width="{Binding ElementName=PagesPage, Path=ActualWidth}">
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
@@ -71,7 +71,7 @@
                     <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
                 
-                <WrapPanel x:Name="wpButtonsContainer" HorizontalAlignment="Center" Grid.Column="1"/>
+                <WrapPanel x:Name="wpButtonsContainer" HorizontalAlignment="Center" Grid.Column="1" Width="{Binding ElementName=brdr, Path=Width}"/>
             </Grid>
 
         </ScrollViewer>

@@ -79,10 +79,16 @@ namespace Quizify_Project.Windows.Questions
             questionRowHeight = QuestionText.Height + 65;
             answerRowHeight = AnswerText.Height + 65;
 
+            QuestionRow.Height = new GridLength(questionRowHeight);
+
+
             if (questionRowHeight + answerRowHeight <= 420)
             {
-                QuestionRow.Height = new GridLength(questionRowHeight);
                 AnswerRow.Height = new GridLength(answerRowHeight);
+            }
+            else
+            {
+                AnswerRow.Height = new GridLength(420 - questionRowHeight);
             }
 
             if (TotalHeight() < 540)
@@ -91,9 +97,18 @@ namespace Quizify_Project.Windows.Questions
                 this.MinHeight = TotalHeight();
                 this.MaxHeight = TotalHeight();
             }
+            else
+            {
+                this.Height = 540;
+                this.MinHeight = 540;
+                this.MaxHeight = 540;
+            }
         }
+
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            this.CacheMode = new BitmapCache();
+
             if (_Mode == enMode.Add)
             {
                 EdgeText.Text = "Add Question";
@@ -134,6 +149,10 @@ namespace Quizify_Project.Windows.Questions
             AnswerText.Text = question.answer;
 
             SetHeight();
+
+            await Task.Delay(TimeSpan.FromMilliseconds(300));
+
+            this.CacheMode = null;
         }
 
         async Task CloseWindow()
@@ -145,6 +164,8 @@ namespace Quizify_Project.Windows.Questions
 
         async Task CloseAnimation()
         {
+            this.CacheMode = new BitmapCache();
+
             DoubleAnimation fadeOut = new DoubleAnimation(0, TimeSpan.FromMilliseconds(200));
 
             var scaleX = new DoubleAnimation(1, 0.7, TimeSpan.FromMilliseconds(200));
@@ -244,7 +265,7 @@ namespace Quizify_Project.Windows.Questions
             }
         }
 
-        private async void Save_MouseUp(object sender, MouseButtonEventArgs e)
+        async Task Save()
         {
             if (_Mode == enMode.Add)
             {
@@ -289,6 +310,21 @@ namespace Quizify_Project.Windows.Questions
                     await CloseWindow();
                 }
                 catch { CustomMessageBox.Show("An error occurred while saving the question.", MessageBoxImage.Error, DBErrorFullMessage.FullMessage); }
+            }
+        }
+        private async void Save_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            await Save();
+        }
+
+        private async void QuestionText_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                if (save.IsEnabled)
+                {
+                    await Save();
+                }
             }
         }
     }

@@ -32,16 +32,16 @@
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Duration="0:0:0.2" To="1.2" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderScale"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.2" To="1.2" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderScale"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.2" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderScale"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.2" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderScale"></DoubleAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
                 <EventTrigger RoutedEvent="MouseLeave">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderScale"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderScale"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderScale"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderScale"></DoubleAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>

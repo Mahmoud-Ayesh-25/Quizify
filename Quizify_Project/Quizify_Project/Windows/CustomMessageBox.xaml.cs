@@ -246,5 +246,15 @@ namespace Quizify_Project.Windows
 
             Clipboard.SetText(FullMessageText.Text);
         }
+
+        private async void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                await CloseAnimation();
+
+                base.Close();
+            }
+        }
     }
 }

@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:Quizify_Project.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="40" d:DesignWidth="400"
-             RenderOptions.BitmapScalingMode="HighQuality">
+             RenderOptions.BitmapScalingMode="HighQuality"
+             CacheMode="BitmapCache">
 
     <Grid>
         <Border Background="#08ffffff" BorderThickness="1.5" CornerRadius="10">
@@ -18,13 +19,13 @@
                 <Grid>
                 <TextBox Panel.ZIndex="1" x:Name="txtBx" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Foreground="White"
                          VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Padding="10 0" FontSize="15" CaretBrush="White" LostFocus="txtBx_LostFocus"
-                         TextChanged="txtBx_TextChanged">
+                         TextChanged="txtBx_TextChanged" AcceptsReturn="True">
                     <TextBox.Triggers>
                         <EventTrigger RoutedEvent="GotFocus">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Duration="0:0:0.2" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ImageAndSearchPanal"></DoubleAnimation>
-                                    <ColorAnimation Duration="0:0:0.2" To="#eeffffff" Storyboard.TargetProperty="Color" Storyboard.TargetName="brdr"/>
+                                    <DoubleAnimation Duration="0:0:0.05" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ImageAndSearchPanal"></DoubleAnimation>
+                                    <ColorAnimation Duration="0:0:0.05" To="#eeffffff" Storyboard.TargetProperty="Color" Storyboard.TargetName="brdr"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
@@ -32,7 +33,7 @@
                         <EventTrigger RoutedEvent="LostFocus">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation Duration="0:0:0.2" To="#33ffffff" Storyboard.TargetProperty="Color" Storyboard.TargetName="brdr"/>
+                                    <ColorAnimation Duration="0:0:0.05" To="#33ffffff" Storyboard.TargetProperty="Color" Storyboard.TargetName="brdr"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>

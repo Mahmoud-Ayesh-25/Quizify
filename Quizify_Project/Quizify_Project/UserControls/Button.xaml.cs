@@ -25,6 +25,11 @@ namespace Quizify_Project.UserControls
 
             this.backGround = backGround;
             this.border = border;
+
+            this.CacheMode = new BitmapCache()
+            {
+                RenderAtScale = 1
+            };
         }
 
         private void MyButton_Loaded(object sender, System.Windows.RoutedEventArgs e)

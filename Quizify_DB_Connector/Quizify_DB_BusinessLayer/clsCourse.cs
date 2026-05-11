@@ -42,6 +42,11 @@ namespace Quizify_DB_BusinessLayer
                 return await Quizify_DB_DataLayer.clsCourses.GetAllCourses();
         }
 
+        public static async Task<DataTable> GetAllCoursesWithLessonsCount()
+        {
+            return await Quizify_DB_DataLayer.clsCourses.GetAllCoursesWithLessonsCount();
+        }
+
         public static async Task<clsCourse> GetCourse(int courseID)
         {
             List<object> data = await Quizify_DB_DataLayer.clsCourses.GetCourse(courseID);

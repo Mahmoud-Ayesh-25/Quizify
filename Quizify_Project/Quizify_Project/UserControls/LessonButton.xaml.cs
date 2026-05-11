@@ -1,5 +1,6 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Quizify_Project.UserControls
 {
@@ -36,6 +37,11 @@ namespace Quizify_Project.UserControls
             RemoveBTN.Tag = id;
 
             Title = title;
+
+            this.CacheMode = new BitmapCache()
+            {
+                RenderAtScale = 1.4
+            };
         }
 
         private void MainBorderStopEvent_MouseDown(object sender, MouseButtonEventArgs e)
@@ -45,24 +51,24 @@ namespace Quizify_Project.UserControls
 
         private void EditBTN_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ClickAnim1.To = 1.08;
-            ClickAnim2.To = 1.08;
+            ClickAnim1.To = 1.04;
+            ClickAnim2.To = 1.04;
 
             MainBorder.MouseUp += MainBorderStopEvent_MouseDown;
         }
 
         private void EditBTN_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            ClickAnim1.To = 1.03;
-            ClickAnim2.To = 1.03;
+            ClickAnim1.To = 1.02;
+            ClickAnim2.To = 1.02;
 
             MainBorder.MouseUp -= MainBorderStopEvent_MouseDown;
         }
 
         private void RemoveBTN_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            ClickAnim1.To = 1.03;
-            ClickAnim2.To = 1.03;
+            ClickAnim1.To = 1.02;
+            ClickAnim2.To = 1.02;
 
             MainBorder.MouseUp -= MainBorderStopEvent_MouseDown;
         }

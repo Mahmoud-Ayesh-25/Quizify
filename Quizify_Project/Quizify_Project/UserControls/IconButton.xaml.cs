@@ -22,6 +22,11 @@ namespace Quizify_Project.UserControls
             InitializeComponent();
 
             _border_color = BorderColor.Color;
+
+            this.CacheMode = new BitmapCache()
+            {
+                RenderAtScale = 1.2
+            };
         }
 
         public void SetChecked()

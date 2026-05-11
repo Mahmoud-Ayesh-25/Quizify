@@ -37,8 +37,8 @@
             </Grid.ColumnDefinitions>
 
             <local:BackButton x:Name="BackBTN" Grid.Column="1" Height="45" VerticalAlignment="Top" Margin="0 25 0 0" Opacity="0" IsEnabled="False"></local:BackButton>
-            
-            <TextBlock x:Name="text" Text="Courses" FontSize="20" Foreground="#ccffffff" TextAlignment="Left" Padding="0 7" Opacity="1"
+
+            <TextBlock x:Name="text" Text="Courses" FontSize="20" Foreground="#ccffffff" TextAlignment="Left" Padding="0 7" Opacity="1" ToolTip="{Binding ElementName=text, Path=Text}"
                        VerticalAlignment="Top" Margin="0 25" Grid.Column="1" Grid.ColumnSpan="2" Height="45" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis">
                 
                 <TextBlock.RenderTransform>

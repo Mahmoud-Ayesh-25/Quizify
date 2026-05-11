@@ -52,7 +52,7 @@
                            RenderOptions.BitmapScalingMode="HighQuality"></TextBlock>
 
                 <TextBlock Text="C#/Why C#" x:Name="PathText" Grid.Column="1" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="17"
-                    Foreground="White" FontFamily="Arial" TextTrimming="CharacterEllipsis"></TextBlock>
+                    Foreground="White" FontFamily="Arial" TextTrimming="CharacterEllipsis" ToolTip="{Binding ElementName=PathText, Path=Text}"></TextBlock>
 
             </Grid>
 

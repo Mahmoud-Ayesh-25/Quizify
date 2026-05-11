@@ -146,6 +146,8 @@ namespace Quizify_Project.Windows
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            this.CacheMode = new BitmapCache();
+
             try
             {
                 questions = await GetQuestions();
@@ -164,6 +166,10 @@ namespace Quizify_Project.Windows
 
             SetQuestionCountComboBex();
             SetQuestionTimeComboBox();
+
+            await Task.Delay(TimeSpan.FromMilliseconds(300));
+
+            this.CacheMode = null;
         }
 
         async Task CloseWindow()
@@ -175,6 +181,8 @@ namespace Quizify_Project.Windows
 
         async Task CloseAnimation()
         {
+            this.CacheMode = new BitmapCache();
+
             DoubleAnimation fadeOut = new DoubleAnimation(0, TimeSpan.FromMilliseconds(200));
 
             var scaleX = new DoubleAnimation(1, 0.7, TimeSpan.FromMilliseconds(200));

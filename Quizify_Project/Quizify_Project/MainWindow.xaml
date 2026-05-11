@@ -7,7 +7,7 @@
         xmlns:classes="clr-namespace:Quizify_Project.Classes"
         xmlns:UserControls="clr-namespace:Quizify_Project.UserControls" x:Class="Quizify_Project.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1242"
+        Title="MainWindow" Height="820" Width="1242"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -16,7 +16,8 @@
         x:Name="MyWindow"
         MinWidth="895" MinHeight="540"
         StateChanged="MyWindow_StateChanged"
-    RenderOptions.BitmapScalingMode="HighQuality">
+    RenderOptions.BitmapScalingMode="HighQuality"
+        Loaded="MyWindow_Loaded">
 
 
     <Window.RenderTransform>
@@ -71,7 +72,7 @@
             <Border Background="Transparent" Height="5" x:Name="BottomResize" VerticalAlignment="Bottom" Panel.ZIndex="5" Grid.Row="2" Cursor="SizeNS"
                     MouseDown="RightResize_MouseDown" MouseMove="RightResize_MouseMove" MouseUp="RightResize_MouseUp"/>
 
-            <TextBlock Text="v1.0       Mahmoud Ayesh - Software Developer" FontSize="11" Margin="10 0" Foreground="#aaffffff" FontFamily="Microsoft YaHei" Grid.Row="2" RenderOptions.BitmapScalingMode="HighQuality"/>
+            <TextBlock Text="v1.4.11       Mahmoud Ayesh - Software Developer" FontSize="11" Margin="10 0" Foreground="#aaffffff" FontFamily="Microsoft YaHei" Grid.Row="2" RenderOptions.BitmapScalingMode="HighQuality"/>
 
             <Border Grid.Row="0" Background="#FF111731" CornerRadius="10 10 0 0" BorderThickness="1" BorderBrush="#FF343D66">
 
@@ -98,79 +99,52 @@
                         </Grid.ColumnDefinitions>
 
                         <Border CornerRadius="5" Grid.Column="2" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" MouseUp="CloseBTN_MouseUp">
-
-                            <Border.Background>
-                                <SolidColorBrush x:Name="CloseBTNColor" Color="Transparent"/>
-                            </Border.Background>
-
-                            <Border.Triggers>
-                                <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation Duration="0:0:0.15" To="#33ff0000" Storyboard.TargetName="CloseBTNColor" Storyboard.TargetProperty="Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation Duration="0:0:0.15" To="Transparent" Storyboard.TargetName="CloseBTNColor" Storyboard.TargetProperty="Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </Border.Triggers>
+                            
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Background" Value="Transparent"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#33ff0000"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            
                             <Image Source="/Images/Buttons/close.png" Width="20" Height="20" RenderOptions.BitmapScalingMode="HighQuality"/>
 
                         </Border>
 
                         <Border CornerRadius="5" Grid.Column="1" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" MouseUp="MaxBTN_MouseUp">
 
-                            <Border.Background>
-                                <SolidColorBrush x:Name="MaxBTNColor" Color="Transparent"/>
-                            </Border.Background>
-
-                            <Border.Triggers>
-                                <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation Duration="0:0:0.15" To="#22ffffff" Storyboard.TargetName="MaxBTNColor" Storyboard.TargetProperty="Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation Duration="0:0:0.15" To="Transparent" Storyboard.TargetName="MaxBTNColor" Storyboard.TargetProperty="Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </Border.Triggers>
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Background" Value="Transparent"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#22ffffff"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            
                             <Image Source="/Images/Buttons/max.png" Width="20" Height="20" RenderOptions.BitmapScalingMode="HighQuality"/>
 
                         </Border>
 
                         <Border CornerRadius="5" Grid.Column="0" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" MouseUp="MinBTN_MouseUp">
 
-                            <Border.Background>
-                                <SolidColorBrush x:Name="MinBTNColor" Color="Transparent"/>
-                            </Border.Background>
-
-                            <Border.Triggers>
-                                <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation Duration="0:0:0.15" To="#22ffffff" Storyboard.TargetName="MinBTNColor" Storyboard.TargetProperty="Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                                <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation Duration="0:0:0.15" To="Transparent" Storyboard.TargetName="MinBTNColor" Storyboard.TargetProperty="Color"/>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </Border.Triggers>
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Background" Value="Transparent"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#22ffffff"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            
                             <Image Source="/Images/Buttons/min.png" Width="20" Height="20" RenderOptions.BitmapScalingMode="HighQuality"/>
 
                         </Border>

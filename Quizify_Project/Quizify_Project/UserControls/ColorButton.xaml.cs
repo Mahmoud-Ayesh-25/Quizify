@@ -33,6 +33,11 @@ namespace Quizify_Project.UserControls
         public ColorButton()
         {
             InitializeComponent();
+
+            this.CacheMode = new BitmapCache()
+            {
+                RenderAtScale = 1.2
+            };
         }
 
         public void SetChecked()

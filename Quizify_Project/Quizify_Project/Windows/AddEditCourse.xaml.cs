@@ -188,6 +188,8 @@ namespace Quizify_Project.Windows
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            this.CacheMode = new BitmapCache();
+
             MainBorder.IsEnabled = false;
 
             if (_Mode == enMode.Add)
@@ -249,10 +251,16 @@ namespace Quizify_Project.Windows
             save.IsEnabled = false;
 
             MainBorder.IsEnabled = true;
+
+            await Task.Delay(TimeSpan.FromMilliseconds(300));
+
+            this.CacheMode = null;
         }
 
         async Task CloseWindow()
         {
+            this.CacheMode = new BitmapCache();
+
             await CloseAnimation();
 
             base.Close();
@@ -340,7 +348,7 @@ namespace Quizify_Project.Windows
             }
         }
 
-        private async void Save_MouseUp(object sender, MouseButtonEventArgs e)
+        async Task Save()
         {
             if (_Mode == enMode.Add)
             {
@@ -386,6 +394,21 @@ namespace Quizify_Project.Windows
                     await CloseWindow();
                 }
                 catch { CustomMessageBox.Show("An error occurred while saving the course.", MessageBoxImage.Error, DBErrorFullMessage.FullMessage); }
+            }
+        }
+        private async void Save_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            await Save();
+        }
+
+        private async void TitleText_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                if (save.IsEnabled)
+                {
+                    await Save();
+                }
             }
         }
     }

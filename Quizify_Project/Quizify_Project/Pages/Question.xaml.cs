@@ -23,6 +23,8 @@ namespace Quizify_Project.Pages
         enum enSortBy { Default, Name};
         enSortBy _sortBy;
 
+        bool firstLoad = true;
+
         public Question()
         {
             _sortBy = enSortBy.Default;
@@ -33,8 +35,11 @@ namespace Quizify_Project.Pages
             clsQuestionPageEventsHelper.OnRemoveComplete += RemoveItemComplete;
         }
 
-        void InBackAnimation()
+        async void InBackAnimation()
         {
+            spButtonsContainer.IsEnabled = false;
+            this.CacheMode = new BitmapCache();
+
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, null);
             SViewr.BeginAnimation(OpacityProperty, null);
@@ -60,10 +65,18 @@ namespace Quizify_Project.Pages
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, scaleY);
 
             SViewr.BeginAnimation(OpacityProperty, opacity);
+
+            this.CacheMode = null;
+
+            await Task.Delay(TimeSpan.FromMilliseconds(200));
+            spButtonsContainer.IsEnabled = true;
         }
 
-        void OutBackAnimation()
+        async void OutBackAnimation()
         {
+            spButtonsContainer.IsEnabled = false;
+            this.CacheMode = new BitmapCache();
+
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, null);
             SViewr.BeginAnimation(OpacityProperty, null);
@@ -90,6 +103,11 @@ namespace Quizify_Project.Pages
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, scaleY);
 
             SViewr.BeginAnimation(OpacityProperty, opacity);
+
+            this.CacheMode = null;
+
+            await Task.Delay(TimeSpan.FromMilliseconds(200));
+            spButtonsContainer.IsEnabled = true;
         }
 
         void SetComboBox()
@@ -165,7 +183,6 @@ namespace Quizify_Project.Pages
             catch { CustomMessageBox.ShowWithBackShadow("An error occurred while fetching data from the database.", MessageBoxImage.Error, DBErrorFullMessage.FullMessage); }
 
             LoadButtonsItems(dt);
-            await Task.Delay(50);
             SViewr.Opacity = 1;
 
             InBackAnimation();
@@ -173,6 +190,8 @@ namespace Quizify_Project.Pages
 
         private async void SortedByCBx_OnSelectedItemChanged(string newSelectedItem)
         {
+            if (firstLoad) { firstLoad = false; return; }
+
             DoubleAnimation animOut = new DoubleAnimation(1, 0, TimeSpan.FromMilliseconds(100));
             DoubleAnimation animIn = new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(100));
 
@@ -190,8 +209,10 @@ namespace Quizify_Project.Pages
             spButtonsContainer.BeginAnimation(OpacityProperty, animIn);
         }
 
-        private async void SearchBar_OnTextChanged()
+        private void SearchBar_OnTextChanged()
         {
+            if (firstLoad) { firstLoad = false; return; }
+
             dt = questions.Copy();
 
             DoubleAnimation animOut = new DoubleAnimation(1, 0, TimeSpan.FromMilliseconds(50));
@@ -215,8 +236,6 @@ namespace Quizify_Project.Pages
                     }
                 }
             }
-
-            await Task.Delay(TimeSpan.FromMilliseconds(50));
 
             LoadButtonsItems(dt);
 

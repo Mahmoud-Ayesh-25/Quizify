@@ -14,10 +14,10 @@
     <Product>Quizify</Product>
     <Description>Refresh your memory</Description>
     <PackageIcon>QuizifyIcon.png</PackageIcon>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0</FileVersion>
+    <AssemblyVersion>1.4.11</AssemblyVersion>
+    <FileVersion>1.4.11</FileVersion>
     <PackageId>Quizify</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.4.11</Version>
     <Title>Quizify</Title>
     <RootNamespace>Quizify</RootNamespace>
     <AssemblyName>Quizify</AssemblyName>
@@ -236,6 +236,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserControls\Button.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\CustomTextBoxOneLine.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserControls\QuestionButton.xaml.cs">

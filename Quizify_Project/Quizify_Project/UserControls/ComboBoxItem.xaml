@@ -7,7 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="35" d:DesignWidth="150"
              Height="35"
-             RenderOptions.BitmapScalingMode="HighQuality">
+             RenderOptions.BitmapScalingMode="HighQuality"
+             CacheMode="BitmapCache">
     <Grid>
         <Border CornerRadius="10" Margin="2" BorderThickness="1">
             
@@ -31,8 +32,8 @@
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Duration="0:0:0.2" To="#66000000" Storyboard.TargetName="background" Storyboard.TargetProperty="Color"></ColorAnimation>
-                            <ColorAnimation Duration="0:0:0.2" To="#ffffffff" Storyboard.TargetName="FontColor" Storyboard.TargetProperty="Color"></ColorAnimation>
+                            <ColorAnimation Duration="0:0:0.05" To="#66000000" Storyboard.TargetName="background" Storyboard.TargetProperty="Color"></ColorAnimation>
+                            <ColorAnimation Duration="0:0:0.05" To="#ffffffff" Storyboard.TargetName="FontColor" Storyboard.TargetProperty="Color"></ColorAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -40,8 +41,8 @@
                 <EventTrigger RoutedEvent="MouseLeave">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Duration="0:0:0.2" To="#44000000" Storyboard.TargetName="background" Storyboard.TargetProperty="Color"></ColorAnimation>
-                            <ColorAnimation Duration="0:0:0.2" To="#aaffffff" Storyboard.TargetName="FontColor" Storyboard.TargetProperty="Color"></ColorAnimation>
+                            <ColorAnimation Duration="0:0:0.05" To="#44000000" Storyboard.TargetName="background" Storyboard.TargetProperty="Color"></ColorAnimation>
+                            <ColorAnimation Duration="0:0:0.05" To="#aaffffff" Storyboard.TargetName="FontColor" Storyboard.TargetProperty="Color"></ColorAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>

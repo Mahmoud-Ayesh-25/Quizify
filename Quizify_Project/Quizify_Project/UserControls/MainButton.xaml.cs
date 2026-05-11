@@ -1,4 +1,5 @@
 ﻿using Quizify_Project.Classes;
+using System.ComponentModel;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -9,7 +10,7 @@ namespace Quizify_Project.UserControls
     /// <summary>
     /// Interaction logic for MainButton.xaml
     /// </summary>
-    public partial class MainButton : UserControl
+    public partial class MainButton : UserControl, INotifyPropertyChanged
     {
         public int ID { get; }
 
@@ -27,39 +28,32 @@ namespace Quizify_Project.UserControls
         }
 
 
+        public Color MainBackgroundColorUp { get { return _mainBackgroundColorUp; } set { _mainBackgroundColorUp = value; OnPropertyChanged(nameof(MainBackgroundColorUp)); } }
+        Color _mainBackgroundColorUp;
+        public Color MainBackgroundColorDown { get { return _mainBackgroundColorDown; } set { _mainBackgroundColorDown = value; OnPropertyChanged(nameof(MainBackgroundColorDown)); } }
+        Color _mainBackgroundColorDown;
 
-        public Color MainBackgroundColorUp 
-        { 
-            get { return BackgroundUp.Color; }
-            set { BackgroundUp.Color = value; }
-        }
-        public Color MainBackgroundColorDown
-        {
-            get { return BackgroundDown.Color; }
-            set { BackgroundDown.Color = value; }
-        }
+        public Color BorderColorUp { get { return _borderColorUp; } set { _borderColorUp = value; OnPropertyChanged(nameof(BorderColorUp)); } }
+        Color _borderColorUp;
+        public Color BorderColorDown { get { return _borderColorDown; } set { _borderColorDown = value; OnPropertyChanged(nameof(BorderColorDown)); } }
+        Color _borderColorDown;
 
-        public Color BorderColorUp
-        {
-            get { return OutLine1.Color; }
-            set { OutLine1.Color = value; }
-        }
-        public Color BorderColorDown
-        {
-            get { return OutLine2.Color; }
-            set { OutLine2.Color = value; }
-        }
+        public Color LessonsCountAreaBackgroundColor { get { return _lessonsCountAreaBackgroundColor; } set { _lessonsCountAreaBackgroundColor = value; OnPropertyChanged(nameof(LessonsCountAreaBackgroundColor)); } }
+        Color _lessonsCountAreaBackgroundColor;
 
-        public Color LessonsCountAreaBackgroundColor
-        {
-            get { return ButtomAreaColor.Color; }
-            set { ButtomAreaColor.Color = value; }
-        }
+        public Color MouseEnterBorderColor { get { return _mouseEnterBorderColor; } set { _mouseEnterBorderColor = value; OnPropertyChanged(nameof(MouseEnterBorderColor)); } }
+        Color _mouseEnterBorderColor;
 
-        public Color MouseEnterBorderColor { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string propName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
+        }
 
         public MainButton(int id, string title, int lessonCount, string iconPath, clsColors.stColor colors)
         {
+
             ID = id;
             LessonsCount = $"{lessonCount} Lessons";
 
@@ -80,8 +74,13 @@ namespace Quizify_Project.UserControls
             LessonsCountAreaBackgroundColor = colors.LessonsCountAreaBackgroundColor;
 
             MouseEnterBorderColor = colors.MouseEnterBorderColor;
-
             this.DataContext = this;
+
+            this.CacheMode = new BitmapCache()
+            {
+                RenderAtScale = 1.4
+            };
+
         }
 
         private void MainBorderStopEvent_MouseDown(object sender, MouseButtonEventArgs e)
@@ -91,24 +90,24 @@ namespace Quizify_Project.UserControls
 
         private void EditBTN_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ClickAnim1.To = 1.08;
-            ClickAnim2.To = 1.08;
+            ClickAnim1.To = 1.04;
+            ClickAnim2.To = 1.04;
 
             MainBorder.MouseUp += MainBorderStopEvent_MouseDown;
         }
 
         private void EditBTN_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            ClickAnim1.To = 1.03;
-            ClickAnim2.To = 1.03;
+            ClickAnim1.To = 1.02;
+            ClickAnim2.To = 1.02;
 
             MainBorder.MouseUp -= MainBorderStopEvent_MouseDown;
         }
 
         private void RemoveBTN_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            ClickAnim1.To = 1.03;
-            ClickAnim2.To = 1.03;
+            ClickAnim1.To = 1.02;
+            ClickAnim2.To = 1.02;
 
             MainBorder.MouseUp -= MainBorderStopEvent_MouseDown;
         }

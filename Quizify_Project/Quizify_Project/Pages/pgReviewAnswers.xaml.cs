@@ -25,7 +25,10 @@ namespace Quizify_Project.Pages
 
         async Task SetElements()
         {
-            foreach(DataRow row in clsQuizSettings.questionsForReview.Rows)
+            int allQuestionsCount = clsQuizSettings.questionsForReview.Rows.Count;
+            int questionNumber = 0;
+
+            foreach (DataRow row in clsQuizSettings.questionsForReview.Rows)
             {
                 ucAnswerReview answerReview = new ucAnswerReview(row[0].ToString(),
                     row[1].ToString(), row[2].ToString(), int.Parse(row[3].ToString()), int.Parse(row[4].ToString()));
@@ -36,7 +39,10 @@ namespace Quizify_Project.Pages
                 if (row[2].ToString().Length != 0)
                     questionsCount++;
 
-                answerReview.QuestionNumber = $"{questionsCount}/{clsQuizSettings.questionsForReview.Rows.Count}";
+                questionNumber++;
+                answerReview.QuestionNumber = $"{questionNumber}/{allQuestionsCount}";
+
+                if (ElementsContainer.Children.Contains(answerReview)) return;
 
                 ElementsContainer.Children.Add(answerReview);
 

@@ -1,5 +1,6 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Quizify_Project.UserControls
 {
@@ -17,7 +18,7 @@ namespace Quizify_Project.UserControls
             }
             set
             {
-                if (!value.EndsWith("?"))
+                if (!(value.EndsWith("?") || value.EndsWith("؟")))
                     value = value + "?";
 
                 QuestionText.Text = $"Q: {value}";
@@ -31,8 +32,10 @@ namespace Quizify_Project.UserControls
             }
             set
             {
-                if (!value.EndsWith("?"))
-                    value = value + "?";
+                value = value.Replace("\r\n", " ");
+
+                if (!value.EndsWith("."))
+                    value = value + ".";
 
                 AnswerText.Text = $"A: {value}";
             }
@@ -51,6 +54,11 @@ namespace Quizify_Project.UserControls
 
             Question = question;
             Answer = answer;
+
+            this.CacheMode = new BitmapCache()
+            {
+                RenderAtScale = 1.2
+            };
         }
 
         private void MainBorderStopEvent_MouseDown(object sender, MouseButtonEventArgs e)
@@ -60,8 +68,8 @@ namespace Quizify_Project.UserControls
 
         private void EditBTN_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ClickAnim1.To = 1.03;
-            ClickAnim2.To = 1.03;
+            ClickAnim1.To = 1.02;
+            ClickAnim2.To = 1.02;
 
             MainBorder.MouseUp += MainBorderStopEvent_MouseDown;
         }

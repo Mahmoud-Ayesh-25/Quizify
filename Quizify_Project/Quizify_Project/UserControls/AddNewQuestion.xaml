@@ -25,20 +25,13 @@
             <Border.Effect>
                 <DropShadowEffect Direction="300" Opacity="0.4" BlurRadius="10"/>
             </Border.Effect>
-            
+
             <Border.Background>
                 <LinearGradientBrush StartPoint="0.5 0" EndPoint="0.5 1">
                     <GradientStop Color="#FF2D2E53" Offset="0.1"></GradientStop>
                     <GradientStop Color="#FF22223C" Offset="1"></GradientStop>
                 </LinearGradientBrush>
             </Border.Background>
-
-            <Border.BorderBrush>
-                <LinearGradientBrush StartPoint="0.5 0" EndPoint="0.5 1">
-                    <GradientStop x:Name="OutLine1" Color="#FF4D4D6B" Offset="0.1"></GradientStop>
-                    <GradientStop x:Name="OutLine2" Color="#FF4D4D6B" Offset="1"></GradientStop>
-                </LinearGradientBrush>
-            </Border.BorderBrush>
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -68,14 +61,39 @@
                 </TextBlock>
             </Grid>
 
+            <Border.Style>
+                <Style TargetType="Border">
+
+                    <Setter Property="BorderBrush">
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="0.5 0" EndPoint="0.5 1">
+                                <GradientStop Color="#FF4D4D6B" Offset="0.1"></GradientStop>
+                                <GradientStop Color="#FF4D4D6B" Offset="1"></GradientStop>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0.5 0" EndPoint="0.5 1">
+                                        <GradientStop Color="#FFC0C1CC" Offset="0.1"></GradientStop>
+                                        <GradientStop Color="#FFC0C1CC" Offset="1"></GradientStop>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+
             <Border.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Duration="0:0:0.2" To="#FFC0C1CC" Storyboard.TargetName="OutLine1" Storyboard.TargetProperty="Color"/>
-                            <ColorAnimation Duration="0:0:0.2" To="#FFC0C1CC" Storyboard.TargetName="OutLine2" Storyboard.TargetProperty="Color"/>
-                            <DoubleAnimation Duration="0:0:0.2" To="1.03" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.2" To="1.03" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.02" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.02" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -83,10 +101,8 @@
                 <EventTrigger RoutedEvent="MouseLeave">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Duration="0:0:0.2" To="#FF4D4D6B" Storyboard.TargetName="OutLine1" Storyboard.TargetProperty="Color"/>
-                            <ColorAnimation Duration="0:0:0.2" To="#FF4D4D6B" Storyboard.TargetName="OutLine2" Storyboard.TargetProperty="Color"/>
-                            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -103,8 +119,8 @@
                 <EventTrigger RoutedEvent="MouseUp">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Duration="0:0:0.05" To="1.03" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.05" To="1.03" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.02" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.02" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>

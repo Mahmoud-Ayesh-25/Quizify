@@ -299,3 +299,5 @@ C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Release\net8.0-windo
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Release\net8.0-windows\refint\Quizify.dll
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Release\net8.0-windows\Quizify.pdb
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Release\net8.0-windows\ref\Quizify.dll
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Release\net8.0-windows\UserControls\CustomTextBoxOneLine.g.cs
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Release\net8.0-windows\UserControls\CustomTextBoxOneLine.baml

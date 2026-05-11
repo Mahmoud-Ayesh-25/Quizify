@@ -32,7 +32,7 @@
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Duration="0:0:0.2" To="#FFD7FBD8" Storyboard.TargetName="brdr" Storyboard.TargetProperty="Color"/>
+                            <ColorAnimation Duration="0:0:0.05" To="#FFD7FBD8" Storyboard.TargetName="brdr" Storyboard.TargetProperty="Color"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -40,7 +40,7 @@
                 <EventTrigger RoutedEvent="MouseLeave">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Duration="0:0:0.2" To="#FF57C459" Storyboard.TargetName="brdr" Storyboard.TargetProperty="Color"/>
+                            <ColorAnimation Duration="0:0:0.05" To="#FF57C459" Storyboard.TargetName="brdr" Storyboard.TargetProperty="Color"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>

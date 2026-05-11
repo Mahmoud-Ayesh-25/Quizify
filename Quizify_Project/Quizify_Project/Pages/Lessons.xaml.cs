@@ -25,6 +25,8 @@ namespace Quizify_Project.Pages
         enum enSortBy { Default, Name};
         enSortBy _sortBy;
 
+        bool firstLoad = true;
+
         public Lessons()
         {
             _sortBy = enSortBy.Default;
@@ -48,8 +50,11 @@ namespace Quizify_Project.Pages
             }
         }
 
-        void InBackAnimation()
+        async void InBackAnimation()
         {
+            wpButtonsContainer.IsEnabled = false;
+            this.CacheMode = new BitmapCache();
+
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, null);
             SViewr.BeginAnimation(OpacityProperty, null);
@@ -75,10 +80,18 @@ namespace Quizify_Project.Pages
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, scaleY);
 
             SViewr.BeginAnimation(OpacityProperty, opacity);
+
+            this.CacheMode = null;
+
+            await Task.Delay(TimeSpan.FromMilliseconds(200));
+            wpButtonsContainer.IsEnabled = true;
         }
 
-        void OutBackAnimation()
+        async void OutBackAnimation()
         {
+            wpButtonsContainer.IsEnabled = false;
+            this.CacheMode = new BitmapCache();
+
             txt_TT.BeginAnimation(TranslateTransform.XProperty, null);
             BackBTN.BeginAnimation(OpacityProperty, null);
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
@@ -126,10 +139,19 @@ namespace Quizify_Project.Pages
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, scaleY);
 
             SViewr.BeginAnimation(OpacityProperty, opacity);
+
+            this.CacheMode = null;
+
+            await Task.Delay(TimeSpan.FromMilliseconds(200));
+            wpButtonsContainer.IsEnabled = true;
         }
 
         async void OutAnimation()
         {
+
+            wpButtonsContainer.IsEnabled = false;
+            this.CacheMode = new BitmapCache();
+
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, null);
             SViewr.BeginAnimation(OpacityProperty, null);
@@ -163,10 +185,18 @@ namespace Quizify_Project.Pages
             await Task.Delay(TimeSpan.FromMilliseconds(50));
 
             text.BeginAnimation(OpacityProperty, txtOpacity);
+
+            this.CacheMode = null;
+
+            await Task.Delay(TimeSpan.FromMilliseconds(150));
+            wpButtonsContainer.IsEnabled = true;
         }
 
-        void InAnimation()
+        async void InAnimation()
         {
+            wpButtonsContainer.IsEnabled = false;
+            this.CacheMode = new BitmapCache();
+
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, null);
             SViewr.BeginAnimation(OpacityProperty, null);
@@ -192,6 +222,11 @@ namespace Quizify_Project.Pages
             SVScaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, scaleY);
 
             SViewr.BeginAnimation(OpacityProperty, opacity);
+
+            this.CacheMode = null;
+
+            await Task.Delay(TimeSpan.FromMilliseconds(200));
+            wpButtonsContainer.IsEnabled = true;
         }
 
         void SetComboBox()
@@ -204,9 +239,9 @@ namespace Quizify_Project.Pages
             SortedByCBx.SetSelectedItem(0);
         }
 
-        void AddNewButtonItem(DataRow row, int questionCount)
+        void AddNewButtonItem(DataRow row)
         {
-            LessonButton button = new LessonButton((int)row[0], row[1].ToString(), questionCount);
+            LessonButton button = new LessonButton((int)row[0], row[1].ToString(), (int)row[3]);
 
             button.MouseUp += Item_MouseUp;
             button.EditBTN.MouseUp += EditBTN_MouseUp;
@@ -214,7 +249,7 @@ namespace Quizify_Project.Pages
 
             wpButtonsContainer.Children.Add(button);
         }
-        async Task LoadButtonsItems(DataTable items)
+        void LoadButtonsItems(DataTable items)
         {
             wpButtonsContainer.Children.Clear();
 
@@ -227,21 +262,9 @@ namespace Quizify_Project.Pages
                     items = sortedItems.CopyToDataTable();
                 }
 
-                using (SqlConnection connection = new SqlConnection(clsSettings.ConnectionString))
+                foreach (DataRow row in items.Rows)
                 {
-                    try
-                    {
-                        await connection.OpenAsync();
-
-                        foreach (DataRow row in items.Rows)
-                        {
-                            int questionCount = await clsQuestion.GetQuestionsCountByLessonID((int)row[0], connection);
-
-                            AddNewButtonItem(row, questionCount);
-                        }
-                    }
-                    catch { CustomMessageBox.ShowWithBackShadow("An error occurred while fetching data from the database.", MessageBoxImage.Error, DBErrorFullMessage.FullMessage); }
-                    ;
+                    AddNewButtonItem(row);
                 }
             }
 
@@ -253,13 +276,15 @@ namespace Quizify_Project.Pages
         }
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            SViewr.Opacity = 0;
+
             text.Text = clsPagesSettings.selectedCourseTitle;
 
             SetComboBox();
 
             try
             {
-                lessons = await clsLesson.GetAllLessonsByCourseID(clsPagesSettings.selectedCourseID);
+                lessons = await clsLesson.GetAllLessonsWithQuestionsCountByCourseID(clsPagesSettings.selectedCourseID);
 
                 if (lessons.Rows.Count == 0)
                 {
@@ -274,16 +299,16 @@ namespace Quizify_Project.Pages
             }
             catch { CustomMessageBox.ShowWithBackShadow("An error occurred while fetching data from the database.", MessageBoxImage.Error, DBErrorFullMessage.FullMessage); }
 
-            SViewr.Opacity = 0;
-            await LoadButtonsItems(dt);
-            await Task.Delay(50);
-            SViewr.Opacity = 1;
-
+            LoadButtonsItems(dt);
             PlayAnimation();
+
+            SViewr.Opacity = 1;
         }
 
         private async void SortedByCBx_OnSelectedItemChanged(string newSelectedItem)
         {
+            if (firstLoad) { firstLoad = false; return; }
+
             DoubleAnimation animOut = new DoubleAnimation(1, 0, TimeSpan.FromMilliseconds(100));
             DoubleAnimation animIn = new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(100));
 
@@ -301,8 +326,10 @@ namespace Quizify_Project.Pages
             wpButtonsContainer.BeginAnimation(OpacityProperty, animIn);
         }
 
-        private async void SearchBar_OnTextChanged()
+        private void SearchBar_OnTextChanged()
         {
+            if (firstLoad) { firstLoad = false; return; }
+
             dt = lessons.Copy();
 
             DoubleAnimation animOut = new DoubleAnimation(1, 0, TimeSpan.FromMilliseconds(50));
@@ -326,8 +353,6 @@ namespace Quizify_Project.Pages
                     }
                 }
             }
-
-            await Task.Delay(TimeSpan.FromMilliseconds(50));
 
             LoadButtonsItems(dt);
 

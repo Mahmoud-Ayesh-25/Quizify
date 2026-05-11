@@ -69,6 +69,8 @@ namespace Quizify_Project.Windows.Questions
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            this.CacheMode = new BitmapCache();
+
             if (_Mode == enMode.Add)
             {
                 EdgeText.Text = "Add Lesson";
@@ -105,6 +107,10 @@ namespace Quizify_Project.Windows.Questions
             }
 
             TitleText.Text = lesson.title;
+
+            await Task.Delay(TimeSpan.FromMilliseconds(300));
+
+            this.CacheMode = null;
         }
 
         async Task CloseWindow()
@@ -116,6 +122,8 @@ namespace Quizify_Project.Windows.Questions
 
         async Task CloseAnimation()
         {
+            this.CacheMode = new BitmapCache();
+
             DoubleAnimation fadeOut = new DoubleAnimation(0, TimeSpan.FromMilliseconds(200));
 
             var scaleX = new DoubleAnimation(1, 0.7, TimeSpan.FromMilliseconds(200));
@@ -205,7 +213,7 @@ namespace Quizify_Project.Windows.Questions
             }
         }
 
-        private async void Save_MouseUp(object sender, MouseButtonEventArgs e)
+        async Task Save()
         {
             if (_Mode == enMode.Add)
             {
@@ -248,6 +256,21 @@ namespace Quizify_Project.Windows.Questions
                     await CloseWindow();
                 }
                 catch { CustomMessageBox.Show("An error occurred while saving the lesson.", MessageBoxImage.Error, DBErrorFullMessage.FullMessage); }
+            }
+        }
+        private async void Save_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            await Save();
+        }
+
+        private async void TitleText_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                if (save.IsEnabled)
+                {
+                    await Save();
+                }
             }
         }
     }

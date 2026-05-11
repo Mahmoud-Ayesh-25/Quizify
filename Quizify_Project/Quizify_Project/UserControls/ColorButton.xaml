@@ -8,7 +8,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="50"
              x:Name="ColorBTN"
-             RenderOptions.BitmapScalingMode="HighQuality">
+             RenderOptions.BitmapScalingMode="HighQuality"
+             CacheMode="BitmapCache">
 
     <UserControl.Resources>
         <class:clsHalfConverter x:Key="HalfConverter"></class:clsHalfConverter>
@@ -34,16 +35,16 @@
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Duration="0:0:0.2" To="1.2" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.2" To="1.2" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.2" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.2" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
                 <EventTrigger RoutedEvent="MouseLeave">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1" Storyboard.TargetProperty="ScaleX" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1" Storyboard.TargetProperty="ScaleY" Storyboard.TargetName="BorderTranslate"></DoubleAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>

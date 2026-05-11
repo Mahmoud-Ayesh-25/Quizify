@@ -29,7 +29,7 @@ namespace Quizify_Project.Pages
         async Task SetElements()
         {
             Progress.Value = 0;
-            float pregressIncrease = 100 / clsQuizSettings.questions.Rows.Count;
+            double pregressIncrease = 100 / (double)clsQuizSettings.questions.Rows.Count;
 
             int i = 0;
 
@@ -46,9 +46,11 @@ namespace Quizify_Project.Pages
 
                 question.QuestionNumberText.Text = $"{i}/{clsQuizSettings.questions.Rows.Count}";
 
+                if (ElementsContainer.Children.Contains(question)) return;
+
                 ElementsContainer.Children.Add(question);
 
-                await Task.Delay(50);
+                await Task.Delay(10);
 
                 Progress.Value += pregressIncrease;
             }

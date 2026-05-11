@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "Quizify/1.0.0": {
+      "Quizify/1.4.11": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "7.0.0",
           "Quizify_DB_BusinessLayer": "1.0.0",
@@ -365,7 +365,7 @@
     }
   },
   "libraries": {
-    "Quizify/1.0.0": {
+    "Quizify/1.4.11": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

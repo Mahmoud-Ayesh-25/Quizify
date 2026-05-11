@@ -19,20 +19,38 @@
             <Border.Effect>
                 <DropShadowEffect Direction="300" Opacity="0.4" BlurRadius="10"/>
             </Border.Effect>
-            
+
             <Border.Background>
                 <LinearGradientBrush StartPoint="0.5 0" EndPoint="0.5 1">
-                    <GradientStop x:Name="BackgroundUp" Color="{Binding MainBackgroundColorUp}" Offset="0.1"></GradientStop>
-                    <GradientStop x:Name="BackgroundDown" Color="{Binding MainBackgroundColorDown}" Offset="1"></GradientStop>
+                    <GradientStop Color="{Binding MainBackgroundColorUp}" Offset="0.1"></GradientStop>
+                    <GradientStop Color="{Binding MainBackgroundColorDown}" Offset="1"></GradientStop>
                 </LinearGradientBrush>
             </Border.Background>
 
-            <Border.BorderBrush>
-                <LinearGradientBrush StartPoint="0.5 0" EndPoint="0.5 1">
-                    <GradientStop x:Name="OutLine1" Color="{Binding BorderColorUp}" Offset="0.1"></GradientStop>
-                    <GradientStop x:Name="OutLine2" Color="{Binding BorderColorDown}" Offset="1"></GradientStop>
-                </LinearGradientBrush>
-            </Border.BorderBrush>
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush">
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="0.5 0" EndPoint="0.5 1">
+                                <GradientStop Color="{Binding BorderColorUp}" Offset="0.1"></GradientStop>
+                                <GradientStop Color="{Binding BorderColorDown}" Offset="1"></GradientStop>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0.5 0" EndPoint="0.5 1">
+                                        <GradientStop Color="{Binding MouseEnterBorderColor}" Offset="0.1"></GradientStop>
+                                        <GradientStop Color="{Binding MouseEnterBorderColor}" Offset="1"></GradientStop>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -69,37 +87,44 @@
                         <RowDefinition Height="10"/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel x:Name="OptionsButtons" Grid.Row="0" Opacity="0" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <StackPanel x:Name="OptionsButtons" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
 
-                        <Border x:Name="EditBTN" Opacity="0.7" Height="20" Margin="7.5 7.5 7.5 0" ToolTip="Edit" MouseDown="EditBTN_MouseDown" MouseUp="EditBTN_MouseUp" Tag="">
+                        <StackPanel.Style>
+                            <Style TargetType="StackPanel">
+                                <Setter Property="Opacity" Value="0"></Setter>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Border}, Path=IsMouseOver}" Value="True">
+                                        <Setter Property="Opacity" Value="1"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+
+                        <Border x:Name="EditBTN" Height="20" Margin="7.5 7.5 7.5 0" ToolTip="Edit" MouseDown="EditBTN_MouseDown" MouseUp="EditBTN_MouseUp" Tag="">
                             <Image Source="/Images/ButtonIcons/pencil.png" RenderOptions.BitmapScalingMode="HighQuality"/>
 
                             <Border.RenderTransform>
                                 <ScaleTransform x:Name="EditBTNScale" ScaleX="1" ScaleY="1" CenterX="10" CenterY="10"/>
                             </Border.RenderTransform>
-                            
-                            <Border.Triggers>
-                                <EventTrigger RoutedEvent="MouseEnter">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <DoubleAnimation Duration="0:0:0.2" From="0.7" To="1" Storyboard.TargetName="EditBTN" Storyboard.TargetProperty="Opacity"></DoubleAnimation>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
 
-                                <EventTrigger RoutedEvent="MouseLeave">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <DoubleAnimation Duration="0:0:0.2" From="1" To="0.7" Storyboard.TargetName="EditBTN" Storyboard.TargetProperty="Opacity"></DoubleAnimation>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Opacity" Value="0.7"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Opacity" Value="1"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+
+                            <Border.Triggers>
 
                                 <EventTrigger RoutedEvent="MouseDown">
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <DoubleAnimation Duration="0:0:0.05" To="0.85" Storyboard.TargetName="EditBTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
-                                            <DoubleAnimation Duration="0:0:0.05" To="0.85" Storyboard.TargetName="EditBTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
+                                            <DoubleAnimation Duration="0:0:0.05" To="0.95" Storyboard.TargetName="EditBTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
+                                            <DoubleAnimation Duration="0:0:0.05" To="0.95" Storyboard.TargetName="EditBTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
@@ -113,38 +138,34 @@
                                     </BeginStoryboard>
                                 </EventTrigger>
                             </Border.Triggers>
-                            
+
                         </Border>
 
-                        <Border x:Name="RemoveBTN" Opacity="0.7" Height="20" Margin="7.5 7.5 7.5 0" ToolTip="Remove" MouseDown="EditBTN_MouseDown" MouseUp="RemoveBTN_MouseUp" Tag="">
+                        <Border x:Name="RemoveBTN" Height="20" Margin="7.5 7.5 7.5 0" ToolTip="Remove" MouseDown="EditBTN_MouseDown" MouseUp="RemoveBTN_MouseUp" Tag="">
                             <Image Source="/Images/ButtonIcons/remove.png" RenderOptions.BitmapScalingMode="HighQuality"/>
 
                             <Border.RenderTransform>
                                 <ScaleTransform x:Name="RemoveBTNScale" ScaleX="1" ScaleY="1" CenterX="10" CenterY="10"/>
                             </Border.RenderTransform>
 
-                            <Border.Triggers>
-                                <EventTrigger RoutedEvent="MouseEnter">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <DoubleAnimation Duration="0:0:0.2" From="0.7" To="1" Storyboard.TargetName="RemoveBTN" Storyboard.TargetProperty="Opacity"></DoubleAnimation>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Opacity" Value="0.7"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Opacity" Value="1"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
 
-                                <EventTrigger RoutedEvent="MouseLeave">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <DoubleAnimation Duration="0:0:0.2" From="1" To="0.7" Storyboard.TargetName="RemoveBTN" Storyboard.TargetProperty="Opacity"></DoubleAnimation>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
+                            <Border.Triggers>
 
                                 <EventTrigger RoutedEvent="MouseDown">
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <DoubleAnimation Duration="0:0:0.05" To="0.85" Storyboard.TargetName="RemoveBTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
-                                            <DoubleAnimation Duration="0:0:0.05" To="0.85" Storyboard.TargetName="RemoveBTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
+                                            <DoubleAnimation Duration="0:0:0.05" To="0.95" Storyboard.TargetName="RemoveBTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
+                                            <DoubleAnimation Duration="0:0:0.05" To="0.95" Storyboard.TargetName="RemoveBTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
@@ -159,7 +180,7 @@
                                 </EventTrigger>
 
                             </Border.Triggers>
-                            
+
                         </Border>
 
                     </StackPanel>
@@ -174,11 +195,8 @@
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Duration="0:0:0.2" To="{Binding MouseEnterBorderColor}" Storyboard.TargetName="OutLine1" Storyboard.TargetProperty="Color"/>
-                            <ColorAnimation Duration="0:0:0.2" To="{Binding MouseEnterBorderColor}" Storyboard.TargetName="OutLine2" Storyboard.TargetProperty="Color"/>
-                            <DoubleAnimation Duration="0:0:0.2" To="1.08" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.2" To="1.08" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.2" From="0" To="1" Storyboard.TargetName="OptionsButtons" Storyboard.TargetProperty="Opacity"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.04" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.04" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -186,11 +204,8 @@
                 <EventTrigger RoutedEvent="MouseLeave">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Duration="0:0:0.2" To="{Binding BorderColorUp}" Storyboard.TargetName="OutLine1" Storyboard.TargetProperty="Color"/>
-                            <ColorAnimation Duration="0:0:0.2" To="{Binding BorderColorDown}" Storyboard.TargetName="OutLine2" Storyboard.TargetProperty="Color"/>
-                            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.2" From="1" To="0" Storyboard.TargetName="OptionsButtons" Storyboard.TargetProperty="Opacity"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -198,8 +213,8 @@
                 <EventTrigger RoutedEvent="MouseDown">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation x:Name="ClickAnim1" Duration="0:0:0.05" To="1.03" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
-                            <DoubleAnimation x:Name="ClickAnim2" Duration="0:0:0.05" To="1.03" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
+                            <DoubleAnimation x:Name="ClickAnim1" Duration="0:0:0.05" To="1.02" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
+                            <DoubleAnimation x:Name="ClickAnim2" Duration="0:0:0.05" To="1.02" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -207,34 +222,12 @@
                 <EventTrigger RoutedEvent="MouseUp">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Duration="0:0:0.05" To="1.08" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.05" To="1.08" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.04" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleX"></DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.05" To="1.04" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleY"></DoubleAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
 
-                <!--<EventTrigger RoutedEvent="Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation Duration="0:0:1" From="0.5" To="1" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleX">
-                                <DoubleAnimation.EasingFunction>
-                                    <CubicEase EasingMode="EaseOut"/>
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:1" From="0.5" To="1" Storyboard.TargetName="BTNScale" Storyboard.TargetProperty="ScaleY">
-                                <DoubleAnimation.EasingFunction>
-                                    <CubicEase EasingMode="EaseOut"/>
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:1" From="0" To="1" Storyboard.TargetName="MainBorder" Storyboard.TargetProperty="Opacity">
-                                <DoubleAnimation.EasingFunction>
-                                    <CubicEase EasingMode="EaseOut"/>
-                                </DoubleAnimation.EasingFunction>
-                            </DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>-->
-                
             </Border.Triggers>
             
         </Border>

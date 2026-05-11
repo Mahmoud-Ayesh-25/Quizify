@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
@@ -13,6 +14,38 @@ namespace Quizify_DB_DataLayer
         public static async Task<DataTable> GetAllLessons()
         {
             return await clsMainMethods.GetAllData(tableName);
+        }
+
+        public static async Task<DataTable> GetAllLessonsWithQuestionsCountByCourseID(int CourseID)
+        {
+            DataTable dt = new DataTable();
+
+            string query = $@"SELECT Lessons.*, Count(Questions.LessonID) AS QuestionsCount FROM
+                            Lessons LEFT JOIN Questions ON Questions.LessonID = Lessons.LessonID
+                            WHERE Lessons.CourseID = @CourseID
+                            GROUP BY Lessons.LessonID, Lessons.Title, Lessons.CourseID";
+
+            using (SqlConnection connection = new SqlConnection(clsSettings.ConnectionString))
+            {
+                try
+                {
+                    await connection.OpenAsync();
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@CourseID", CourseID);
+
+                        using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                        {
+                            if (reader.HasRows)
+                                dt.Load(reader);
+                        }
+                    }
+                }
+                catch (Exception ex) { clsSettings.CreateErrorEventLog(ex.ToString()); throw; }
+            }
+
+            return dt;
         }
 
         public static async Task<List<object>> GetLesson(int lessonID)

@@ -60,6 +60,8 @@ namespace Quizify_Project
 
         private async void CloseBTN_MouseUp(object sender, MouseButtonEventArgs e)
         {
+            this.CacheMode = new BitmapCache();
+
             DoubleAnimation fadeOut = new DoubleAnimation(0, TimeSpan.FromMilliseconds(200));
 
             var scaleX = new DoubleAnimation(1, 0.7, TimeSpan.FromMilliseconds(200));
@@ -79,6 +81,8 @@ namespace Quizify_Project
 
         private async void MaxBTN_MouseUp(object sender, MouseButtonEventArgs e)
         {
+            this.CacheMode = new BitmapCache();
+
             if (this.WindowState == WindowState.Maximized)
             {
                 var scaleX = new DoubleAnimation(1, 0.7, TimeSpan.FromMilliseconds(150));
@@ -94,6 +98,8 @@ namespace Quizify_Project
 
                 isMin = false;
                 this.WindowState = WindowState.Normal;
+
+                this.CacheMode = null;
             }
             else if (this.WindowState == WindowState.Normal)
             {
@@ -118,12 +124,16 @@ namespace Quizify_Project
 
                 isMin = false;
                 this.WindowState = WindowState.Maximized;
+
+                this.CacheMode = null;
             }
         }
 
         bool isMin;
         private async void MinBTN_MouseUp(object sender, MouseButtonEventArgs e)
         {
+            this.CacheMode = new BitmapCache();
+
             top = this.Top;
 
             var move = new DoubleAnimation(top, top + 300, TimeSpan.FromMilliseconds(300))
@@ -181,6 +191,8 @@ namespace Quizify_Project
             this.WindowState = WindowState.Minimized;
 
             isMin = true;
+
+            this.CacheMode = null;
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -228,6 +240,8 @@ namespace Quizify_Project
 
             if (WindowState == WindowState.Normal || WindowState == WindowState.Maximized)
             {
+                this.CacheMode = new BitmapCache();
+
                 top = this.Top;
 
                 var move = new DoubleAnimation(top + 300, top, TimeSpan.FromMilliseconds(300))
@@ -278,7 +292,16 @@ namespace Quizify_Project
                 WindowScale.BeginAnimation(ScaleTransform.ScaleYProperty, null);
 
                 isMin = false;
+
+                this.CacheMode = null;
             }
+        }
+
+        private async void MyWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.CacheMode = new BitmapCache();
+            await Task.Delay(TimeSpan.FromMilliseconds(500));
+            this.CacheMode = null;
         }
     }
 }

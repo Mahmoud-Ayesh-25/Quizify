@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Quizify_Project.UserControls
 {
@@ -10,6 +11,11 @@ namespace Quizify_Project.UserControls
         public CreateQuizButton()
         {
             InitializeComponent();
+
+            this.CacheMode = new BitmapCache()
+            {
+                RenderAtScale = 1
+            };
         }
     }
 }

@@ -59,8 +59,55 @@ namespace Quizify_Project.Windows.Questions
             ButtonsSP.Children.Add(edit);
             ButtonsSP.Children.Add(close);
         }
+
+        void SetDataAndHeight(int id, string head, string answer)
+        {
+            QuestionText.Text = head;
+            AnswerText.Text = answer;
+
+            if (!(QuestionText.Text.EndsWith("?") || QuestionText.Text.EndsWith("؟")))
+                QuestionText.Text += "?";
+
+            if (!AnswerText.Text.EndsWith("."))
+                AnswerText.Text += ".";
+
+            QuestionText.Height = QuestionText.LineCount * 28;
+            AnswerText.Height = AnswerText.LineCount * 28;
+
+            questionRowHeight = QuestionText.Height + 75;
+            answerRowHeight = AnswerText.Height + 75;
+
+            QuestionRow.Height = new GridLength(questionRowHeight);
+
+            if (questionRowHeight + answerRowHeight <= 420)
+            {
+                AnswerRow.Height = new GridLength(answerRowHeight);
+            }
+            else
+            {
+                AnswerRow.Height = new GridLength(410 - questionRowHeight);
+            }
+
+            if (TotalHeight() < 540)
+            {
+                this.Height = TotalHeight();
+                this.MinHeight = TotalHeight();
+                this.MaxHeight = TotalHeight();
+            }
+            else
+            {
+                this.Height = 540;
+                this.MinHeight = 540;
+                this.MaxHeight = 540;
+            }
+
+        }
+
+
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            this.CacheMode = new BitmapCache();
+
             SetButtons();
 
             AnswerRTLText.MouseUp += AnswerSwitch.MainBorder_MouseUp;
@@ -78,33 +125,11 @@ namespace Quizify_Project.Windows.Questions
                 }
             }
 
-            QuestionText.Text = question.head;
-            AnswerText.Text = question.answer;
+            SetDataAndHeight(-1, question.head, question.answer);
 
-            if (!question.head.EndsWith("?"))
-                QuestionText.Text += "?";
+            await Task.Delay(TimeSpan.FromMilliseconds(300));
 
-            if (!question.answer.EndsWith("."))
-                AnswerText.Text += ".";
-
-            QuestionText.Height = QuestionText.LineCount * 28;
-            AnswerText.Height = AnswerText.LineCount * 28;
-
-            questionRowHeight = QuestionText.Height + 75;
-            answerRowHeight = AnswerText.Height + 75;
-
-            if (questionRowHeight + answerRowHeight <= 420)
-            {
-                QuestionRow.Height = new GridLength(questionRowHeight);
-                AnswerRow.Height = new GridLength(answerRowHeight);
-            }
-
-            if (TotalHeight() < 540)
-            {
-                this.Height = TotalHeight();
-                this.MinHeight = TotalHeight();
-                this.MaxHeight = TotalHeight();
-            }
+            this.CacheMode = null;
         }
 
         async Task CloseWindow()
@@ -116,6 +141,8 @@ namespace Quizify_Project.Windows.Questions
 
         async Task CloseAnimation()
         {
+            this.CacheMode = new BitmapCache();
+
             DoubleAnimation fadeOut = new DoubleAnimation(0, TimeSpan.FromMilliseconds(200));
 
             var scaleX = new DoubleAnimation(1, 0.7, TimeSpan.FromMilliseconds(200));
@@ -161,6 +188,7 @@ namespace Quizify_Project.Windows.Questions
             AddEditQuestion addEdit = new AddEditQuestion(questionID);
 
             addEdit.OnSaveComplete += clsQuestionPageEventsHelper.InvokeEditComplete;
+            addEdit.OnSaveComplete += SetDataAndHeight;
 
             addEdit.ShowDialog();
         }

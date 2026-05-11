@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:Quizify_Project.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="45" d:DesignWidth="200"
-             RenderOptions.BitmapScalingMode="HighQuality">
+             RenderOptions.BitmapScalingMode="HighQuality"
+             CacheMode="BitmapCache">
 
     <Grid>
         <Border x:Name="MainBox" Background="#08ffffff" CornerRadius="10" MouseDown="MainBox_MouseDown" BorderThickness="1.5">
@@ -33,7 +34,7 @@
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Duration="0:0:0.2" To="#eeffffff" Storyboard.TargetName="brdr" Storyboard.TargetProperty="Color"></ColorAnimation>
+                            <ColorAnimation Duration="0:0:0.05" To="#eeffffff" Storyboard.TargetName="brdr" Storyboard.TargetProperty="Color"></ColorAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -41,7 +42,7 @@
                 <EventTrigger RoutedEvent="MouseLeave">
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Duration="0:0:0.2" To="#33ffffff" Storyboard.TargetName="brdr" Storyboard.TargetProperty="Color"></ColorAnimation>
+                            <ColorAnimation Duration="0:0:0.05" To="#33ffffff" Storyboard.TargetName="brdr" Storyboard.TargetProperty="Color"></ColorAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>

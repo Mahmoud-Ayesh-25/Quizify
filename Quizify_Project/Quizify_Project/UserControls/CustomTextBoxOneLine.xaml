@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Quizify_Project.UserControls.SearchBar"
+﻿<UserControl x:Class="Quizify_Project.UserControls.CustomTextBoxOneLine"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -41,8 +41,7 @@
                 </TextBox>
 
                 <StackPanel Panel.ZIndex="0" x:Name="ImageAndSearchPanal" VerticalAlignment="Center" Orientation="Horizontal" Opacity="1">
-                    <Image Source="/Images/ButtonIcons/Search.png" Opacity="0.8" Margin="8" RenderOptions.BitmapScalingMode="HighQuality"></Image>
-                    <TextBlock Text="Search..." VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#55ffffff" FontSize="15"/>
+                    <TextBlock x:Name="TextBXBackText" Text="Type Here..." VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#55ffffff" FontSize="15" Margin="10 0 0 2"/>
                 </StackPanel>
             </Grid>
         </Border>

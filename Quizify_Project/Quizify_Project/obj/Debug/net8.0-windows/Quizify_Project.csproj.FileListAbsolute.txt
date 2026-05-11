@@ -152,10 +152,6 @@ C:\Users\MYMY2\source\repos\Quizify_Project\Quizify_Project\obj\Debug\net8.0-win
 C:\Users\MYMY2\source\repos\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\UserControls\CustomTextBox.baml
 C:\Users\MYMY2\source\repos\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Windows\AddEditLesson.g.cs
 C:\Users\MYMY2\source\repos\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Windows\AddEditLesson.baml
-C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify_Project.dll
-C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\refint\Quizify_Project.dll
-C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify_Project.pdb
-C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Quizify_Project.exe
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Images\ButtonIcons\copy.png
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Images\ButtonIcons\down.png
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Images\ButtonIcons\notebook.png
@@ -197,10 +193,6 @@ C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Images\MessageBoxIcons\info.png
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Images\MessageBoxIcons\question.png
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Images\MessageBoxIcons\warning.png
-C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Quizify_Project.deps.json
-C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Quizify_Project.runtimeconfig.json
-C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Quizify_Project.dll
-C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Quizify_Project.pdb
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.Extensions.Abstractions.dll
@@ -270,10 +262,7 @@ C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Windows\Questions\AddEditQuestion.g.cs
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Windows\Questions\ShowQuestion.g.cs
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\App.g.cs
-C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify_Project_Content.g.cs
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
-C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify_Project_MarkupCompile.cache
-C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify_Project_MarkupCompile.lref
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\App.baml
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\MainWindow.baml
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Pages\Courses.baml
@@ -296,7 +285,6 @@ C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Windows\CustomMessageBox.baml
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Windows\Questions\AddEditQuestion.baml
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Windows\Questions\ShowQuestion.baml
-C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify_Project.g.resources
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify_Project.GeneratedMSBuildEditorConfig.editorconfig
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify_Project.AssemblyInfoInputs.cache
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify_Project.AssemblyInfo.cs
@@ -304,7 +292,6 @@ C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify_Project.sourcelink.json
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify_.85C82F17.Up2Date
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify_Project.genruntimeconfig.cache
-C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\ref\Quizify_Project.dll
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\UserControls\ColorButton.g.cs
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\UserControls\ColorButton.baml
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\UserControls\IconButton.g.cs
@@ -325,3 +312,16 @@ C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\UserControls\ucAnswerReview.baml
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Pages\FinalResult.g.cs
 C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Pages\FinalResult.baml
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Quizify.exe
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Quizify.deps.json
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Quizify.runtimeconfig.json
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Quizify.dll
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\bin\Debug\net8.0-windows\Quizify.pdb
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify_Content.g.cs
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify_MarkupCompile.cache
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify_MarkupCompile.lref
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify.g.resources
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify.dll
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\refint\Quizify.dll
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\Quizify.pdb
+C:\GitHup\repos\Quizify\Quizify_Project\Quizify_Project\obj\Debug\net8.0-windows\ref\Quizify.dll
