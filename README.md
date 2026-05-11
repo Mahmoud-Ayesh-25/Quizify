@@ -20,11 +20,11 @@ The application is developed using **C# and .NET 8.0** with **SQL Server** as th
 ## Technologies Used
 
 ![C#](https://img.shields.io/badge/C%23-239120?style=flat&logo=c-sharp&logoColor=white)
-![.NET 8](https://img.shields.io/badge/.NET_8-512BD4?style=for-the-badge&logo=.net&logoColor=white)
+![.NET 8](https://img.shields.io/badge/.NET_8-0078D4?style=flat&logo=dotnet&logoColor=white)
 ![ADO.NET](https://img.shields.io/badge/ADO.NET-512BD4?style=flat&logo=dotnet&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-CC2927?style=flat&logo=sql&logoColor=white)
 ![SSMS](https://img.shields.io/badge/SSMS-CC2927?style=flat&logo=sql-server&logoColor=white)
-![WPF](https://img.shields.io/badge/WPF-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![WPF](https://img.shields.io/badge/WPF-0078D4?style=flat&logo=windows&logoColor=white)
 ![Visual Studio](https://img.shields.io/badge/Visual_Studio-5C2D91?style=flat&logo=visual-studio&logoColor=white)
 
 ---
