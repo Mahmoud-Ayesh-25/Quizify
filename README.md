@@ -1,6 +1,6 @@
 ## Quizify
 
-**Quizify**It is an application that helps you quickly review what you have studied by creating quizzes
+**Quizify** It is an application that helps you quickly review what you have studied by creating quizzes
 
 The application is developed using **C# and .NET 8.0** with **SQL Server** as the database engine. Provides an elegant, eye-friendly, and user-friendly interface with smooth animations
 
