@@ -38,7 +38,7 @@ This Application was developed to:
 ---
 
 ## Important Notes
-If you only want to try the application, you can download the setup file and install the application on your device with LocalDB. It will work directly (LocalDB is included with the setup file, you won't need to download it separately). You can download the setup file from this link: [Setup File](https://www.dropbox.com/scl/fo/6750svmes09sfe098qq0c/ALmJ3iOblYhRjUIcSVA3Nm0?rlkey=5w7ys1p6awc6fzaig7m5lbffh&st=c90fjng0&dl=0).
+If you only want to try the application, you can download the setup file and install the application on your device with LocalDB. It will work directly (LocalDB is included with the setup file, you won't need to download it separately). You can download the setup file from this link: [Setup File](https://www.dropbox.com/scl/fo/oj4jic0pa0d1jk337w05v/ACE4BFo1j05_nxo27Bvv3lA?rlkey=lnt6t5hsuqlvy7npse59nvkfl&st=ocsi4i0e&dl=0).
 
 ---
 
